@@ -1,0 +1,9 @@
+source_id,source_tier,source_name,owner,url,what_it_is_best_for,trust_level,requires_verification,notes
+S001,Primary,user-provided gameplay footage,user,,,,High,No,
+S002,Primary,official game/store page,developer_or_platform,,,,High,No,
+S003,Structured database,IGDB,IGDB/Twitch,,,,Medium,Yes,
+S004,Structured database,MobyGames,MobyGames,,,,Medium-High,Yes,
+S005,Professional,GDC talk,GDC,,,,Medium-High,Yes,
+S006,Academic,DiGRA paper,DiGRA/authors,,,,High,Yes,
+S007,Curated archive,Interface In Game,Interface In Game,,,,Medium,Yes,
+S008,Community,wiki/forum/reddit,community,,,,Low,Yes,
