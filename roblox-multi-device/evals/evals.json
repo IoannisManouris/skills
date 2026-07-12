@@ -1,0 +1,83 @@
+{
+  "skill_name": "roblox-multi-device",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "This Roblox project has InputBegan checks in Combat.client.lua, a separate MobileFireButton script, and a controller script that fires a different remote. Make the whole game work on keyboard/mouse, phones/tablets, gamepad/TV, and VR without rewriting standard character movement. I want complete code and a test report, not just advice.",
+      "expected_output": "A project-specific migration that inventories current inputs, creates semantic actions and contexts, routes all device bindings through one controller path, preserves default movement/camera, centralizes prompts/device switching, fixes server authority, and reports emulated versus physical test status.",
+      "assertions": [
+        "The output identifies and removes or adapts duplicate device-specific mechanic paths rather than preserving separate fire logic.",
+        "The output provides an action/context map covering keyboard/mouse, touch, gamepad, and VR or documents justified exclusions.",
+        "The implementation uses semantic InputActions/controllers rather than scattering new hardware key checks.",
+        "The output preserves Roblox default character movement/camera unless it gives a mechanic-specific reason to replace them.",
+        "The remote contract sends intent and keeps damage/cooldown/ammo validation on the server.",
+        "The final test report distinguishes Studio emulation from physical-device testing and lists untested hardware honestly."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "My shop works with a mouse, but on Xbox the selection disappears after I buy an item, Button B sometimes closes the whole shop instead of the confirmation dialog, and the list won't scroll to the selected card. Fix the controller and TV experience and keep mouse/touch working.",
+      "expected_output": "A focused UI-navigation repair with a modal/focus stack, deterministic entry/restoration, explicit links where needed, selected-item scrolling, top-modal cancel behavior, visible TV-scale focus states, Activated-based buttons, and pointer/touch coexistence.",
+      "assertions": [
+        "The solution treats the confirmation dialog as the top modal and makes cancel close one level only.",
+        "The solution restores a valid prior selection after purchase or modal close and handles removed/disabled items.",
+        "The selected card is scrolled into view rather than merely assigning GuiService.SelectedObject.",
+        "Ordinary button activation uses GuiButton.Activated or an equivalent cross-input semantic path.",
+        "The solution includes a visible selected state and large-display readability/safe-margin checks.",
+        "Mouse and touch paths remain usable and gamepad focus is restored when PreferredInput returns to gamepad."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Design and implement mobile controls for a third-person Roblox shooter. Players must move, drag the camera, hold aim, fire, reload, swap weapons, and interact at the same time on small phones and tablets. The PC/controller versions already exist.",
+      "expected_output": "A touch control design and implementation integrated into the existing semantic actions, with thumb zones, safe areas, multi-touch ownership, camera gestures, button sizing, aim assistance, device/orientation adaptation, and hardware testing cases.",
+      "assertions": [
+        "Touch controls bind to the same semantic actions and gameplay controllers as PC/controller rather than duplicating combat logic.",
+        "The layout reserves movement and camera zones, respects safe insets, and adapts for small phone versus tablet dimensions.",
+        "The implementation explicitly handles simultaneous movement, camera, aim/fire, and touch cancellation/ownership.",
+        "Required actions do not depend on hover, right-click, or precision drag.",
+        "Aim assistance is described as a tunable touch adaptation while server hit/damage authority remains unchanged.",
+        "The test plan includes real phone/tablet multi-touch and orientation/aspect-ratio cases, not Studio simulation alone."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Add Quest-style VR support to my Roblox dungeon game: teleport and smooth movement, snap/smooth turn, grabbing keys and two-handed weapons, melee, wrist inventory, recenter, seated mode, and controller loss recovery. Keep desktop and controller support intact.",
+      "expected_output": "A VR-specific extension to the shared action architecture using VRService, comfort settings, tracked-pose conversion, validated locomotion/grab/combat contracts, world/wrist UI, lifecycle recovery, and both emulated and physical headset tests.",
+      "assertions": [
+        "VR is detected through VRService and the solution does not use deprecated UserInputService VR pose/detection APIs.",
+        "The headset pose is never overridden, smoothed, or rotated as a desktop camera.",
+        "Teleport, grab, throw, and melee outcomes are revalidated by the server with range/state/plausibility checks.",
+        "Both comfort locomotion/turn choices and seated/recenter behavior are implemented or explicitly scoped.",
+        "Two-handed interactions define release and tracking-loss behavior.",
+        "The test report separates Quest/Studio emulation from physical headset comfort, tracking, and performance tests."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Audit our Roblox controls before console launch. We use ContextActionService in some modules, UserInputService in others, hard-coded [E] prompts, custom vehicle sticks, drag-only inventory, and a menu that assumes IsTenFootInterface. Give us a staged patch plan and implement the safe first stage.",
+      "expected_output": "An evidence-based audit and staged migration that catalogs bindings, flags deprecated and inaccessible patterns, defines the semantic target architecture, implements a reversible first stage, and supplies validation/test gates.",
+      "assertions": [
+        "The audit finds direct key coupling, spawn/static prompts, drag-only UI, mixed input stacks, and deprecated ten-foot detection.",
+        "The plan names one binding owner per semantic action and avoids double-binding IAS and CAS during migration.",
+        "TV presentation is based on current input/display/layout signals rather than platform identity inferred from IsTenFootInterface.",
+        "The first stage is reversible and includes a concrete action inventory/router or adapter rather than a wholesale untested rewrite.",
+        "Vehicle analog values are preserved and deadzone/curve ownership is documented.",
+        "Release gates include no-pointer UI completion, controller disconnect/hot-swap, and physical controller/TV testing."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "We have a build mode with a mouse gizmo, keyboard shortcuts, touch drag handles, and no gamepad path. Convert it to work everywhere. The grid has 60 objects, items stream in/out, users can rename builds, and placement must stay server-secure.",
+      "expected_output": "A scalable cross-device build/editor design with semantic placement actions, pointer/touch adapters, gamepad ray or virtual cursor plus snapping, VR interaction if in scope, virtualized focus-safe UI, text-entry contexts, and server validation.",
+      "assertions": [
+        "The solution provides non-pointer gamepad controls for placement, rotation, depth/mode changes, undo/redo, and property panels.",
+        "Pointer/touch drag remains an adapter to shared semantic operations rather than a separate authoritative placement system.",
+        "TextBox focus enters a text-entry context and prevents build/gameplay shortcuts while typing or using IME/on-screen keyboard.",
+        "Dynamic/streamed item removal cannot leave focus or interaction targeting on a destroyed object.",
+        "The server validates placement bounds, permissions, collision/rules, cost, and rate rather than accepting client CFrames as truth.",
+        "The test plan covers long/virtualized grids, hot-swap, streamed removal, multiple aspect ratios, and network latency."
+      ]
+    }
+  ]
+}

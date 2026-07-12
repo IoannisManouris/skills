@@ -1,0 +1,82 @@
+[
+  {
+    "query": "make my roblox game playable on pc mobile controller tv and vr from one input system",
+    "should_trigger": true
+  },
+  {
+    "query": "our inventory only works with a mouse; add controller focus, touch, and keyboard navigation",
+    "should_trigger": true
+  },
+  {
+    "query": "convert these scattered UserInputService key checks into InputActions and add hot-swap prompts",
+    "should_trigger": true
+  },
+  {
+    "query": "the xbox selection gets lost in my scrolling frame and B closes two modals",
+    "should_trigger": true
+  },
+  {
+    "query": "need a proper mobile hud for move aim shoot reload and interact without breaking gamepad",
+    "should_trigger": true
+  },
+  {
+    "query": "add Quest VR locomotion, grabbing, wrist UI, recenter, and seated comfort options",
+    "should_trigger": true
+  },
+  {
+    "query": "audit our Roblox controls for console launch; we use CAS, hard-coded E prompts, and IsTenFootInterface",
+    "should_trigger": true
+  },
+  {
+    "query": "how should I tune gamepad deadzones, response curves, aim assist and controller glyphs in Roblox?",
+    "should_trigger": true
+  },
+  {
+    "query": "make this Roblox building tool usable with touch, controller, keyboard/mouse, and VR",
+    "should_trigger": true
+  },
+  {
+    "query": "players switch from touch to bluetooth controller mid-match and the buttons/prompts get stuck",
+    "should_trigger": true
+  },
+  {
+    "query": "optimize this Roblox NPC pathfinding loop and reduce server CPU",
+    "should_trigger": false
+  },
+  {
+    "query": "secure my Roblox DataStore profile saving and retry logic",
+    "should_trigger": false
+  },
+  {
+    "query": "create a Roblox shop UI mockup with a blue sci-fi visual style",
+    "should_trigger": false
+  },
+  {
+    "query": "why is my RemoteEvent exploitable when the client sends damage?",
+    "should_trigger": false
+  },
+  {
+    "query": "write a Unity C# input system for keyboard gamepad and touch",
+    "should_trigger": false
+  },
+  {
+    "query": "model a game controller in Blender and texture the buttons",
+    "should_trigger": false
+  },
+  {
+    "query": "translate these Roblox menu labels into Greek",
+    "should_trigger": false
+  },
+  {
+    "query": "add matchmaking and reserved servers to my Roblox lobby",
+    "should_trigger": false
+  },
+  {
+    "query": "make my Roblox UI tween smoother and reduce allocation spikes",
+    "should_trigger": false
+  },
+  {
+    "query": "explain what UserInputService is in one paragraph; no implementation needed",
+    "should_trigger": false
+  }
+]

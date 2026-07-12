@@ -1,0 +1,462 @@
+{
+  "$schemaVersion": "1.0.0",
+  "experience": "replace-with-experience-name",
+  "requiredDevices": [
+    "keyboardMouse",
+    "touch",
+    "gamepad"
+  ],
+  "optionalDevices": [
+    "vr"
+  ],
+  "defaults": {
+    "inputSystem": "InputActionSystem",
+    "contextsRoot": "ReplicatedStorage/Inputs",
+    "preserveDefaultCharacterControls": true,
+    "promptPolicy": "PreferredInput",
+    "capabilityPolicy": "DeviceProfile",
+    "serverAuthority": true
+  },
+  "contexts": [
+    {
+      "id": "GameplayContext",
+      "priority": 2000,
+      "sink": false,
+      "enabledByDefault": true,
+      "notes": "Project gameplay actions. Do not override Roblox default character movement/camera unless required.",
+      "actions": [
+        {
+          "id": "Interact",
+          "type": "Bool",
+          "semantics": "Press once to use the best valid contextual target.",
+          "authority": "split",
+          "devices": [
+            "keyboardMouse",
+            "touch",
+            "gamepad",
+            "vr"
+          ],
+          "bindings": [
+            {
+              "device": "keyboardMouse",
+              "kind": "KeyCode",
+              "value": "E"
+            },
+            {
+              "device": "gamepad",
+              "kind": "KeyCode",
+              "value": "ButtonX"
+            },
+            {
+              "device": "touch",
+              "kind": "UIButton",
+              "value": "HUD/Actions/Interact"
+            },
+            {
+              "device": "vr",
+              "kind": "KeyCode",
+              "value": "ButtonR1",
+              "role": "RightHand"
+            }
+          ],
+          "prompt": {
+            "label": "Interact",
+            "holdLabel": null
+          },
+          "serverValidation": [
+            "player state",
+            "target existence",
+            "distance",
+            "line of sight",
+            "permission",
+            "rate limit"
+          ],
+          "accessibility": [
+            "large touch button option",
+            "ray or focus alternative in VR"
+          ]
+        },
+        {
+          "id": "PrimaryAction",
+          "type": "Bool",
+          "semantics": "Primary equipped tool or combat action; preserve press and release for automatic/charged tools.",
+          "authority": "split",
+          "devices": [
+            "keyboardMouse",
+            "touch",
+            "gamepad",
+            "vr"
+          ],
+          "bindings": [
+            {
+              "device": "keyboardMouse",
+              "kind": "KeyCode",
+              "value": "MouseLeftButton"
+            },
+            {
+              "device": "gamepad",
+              "kind": "KeyCode",
+              "value": "ButtonR2",
+              "pressedThreshold": 0.55,
+              "releasedThreshold": 0.35
+            },
+            {
+              "device": "touch",
+              "kind": "UIButton",
+              "value": "HUD/Actions/Primary"
+            },
+            {
+              "device": "vr",
+              "kind": "KeyCode",
+              "value": "ButtonR2",
+              "role": "DominantHand"
+            }
+          ],
+          "prompt": {
+            "label": "Use",
+            "holdLabel": "Hold to use"
+          },
+          "serverValidation": [
+            "equipped item",
+            "cooldown/rate",
+            "ammo/charges",
+            "origin bounds",
+            "target/hit"
+          ],
+          "accessibility": [
+            "hold/toggle option when mechanic allows",
+            "aim assistance by device"
+          ]
+        },
+        {
+          "id": "OpenInventory",
+          "type": "Bool",
+          "semantics": "Open the inventory and transfer ownership to MenuContext.",
+          "authority": "local",
+          "devices": [
+            "keyboardMouse",
+            "touch",
+            "gamepad",
+            "vr"
+          ],
+          "bindings": [
+            {
+              "device": "keyboardMouse",
+              "kind": "KeyCode",
+              "value": "Tab"
+            },
+            {
+              "device": "gamepad",
+              "kind": "KeyCode",
+              "value": "ButtonY"
+            },
+            {
+              "device": "touch",
+              "kind": "UIButton",
+              "value": "HUD/Navigation/Inventory"
+            },
+            {
+              "device": "vr",
+              "kind": "KeyCode",
+              "value": "ButtonY",
+              "role": "OffHand"
+            }
+          ],
+          "prompt": {
+            "label": "Inventory",
+            "holdLabel": null
+          },
+          "serverValidation": [],
+          "accessibility": [
+            "persistent HUD entry when suitable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MenuContext",
+      "priority": 4000,
+      "sink": true,
+      "enabledByDefault": false,
+      "notes": "Enabled for project-owned menus. It sinks only bindings that must not reach gameplay/default controls.",
+      "actions": [
+        {
+          "id": "MenuConfirm",
+          "type": "Bool",
+          "semantics": "Activate the current selected/focused control. Ordinary GuiButtons should also use Activated.",
+          "authority": "local",
+          "devices": [
+            "keyboardMouse",
+            "touch",
+            "gamepad",
+            "vr"
+          ],
+          "bindings": [
+            {
+              "device": "keyboardMouse",
+              "kind": "KeyCode",
+              "value": "Return"
+            },
+            {
+              "device": "gamepad",
+              "kind": "KeyCode",
+              "value": "ButtonA"
+            },
+            {
+              "device": "touch",
+              "kind": "GuiButtonActivated",
+              "value": "FocusedButton"
+            },
+            {
+              "device": "vr",
+              "kind": "KeyCode",
+              "value": "ButtonR2",
+              "role": "ActivePointer"
+            }
+          ],
+          "prompt": {
+            "label": "Select",
+            "holdLabel": null
+          },
+          "serverValidation": [],
+          "accessibility": [
+            "dwell or alternate confirm when supported"
+          ]
+        },
+        {
+          "id": "MenuCancel",
+          "type": "Bool",
+          "semantics": "Close only the top modal or return one level.",
+          "authority": "local",
+          "devices": [
+            "keyboardMouse",
+            "touch",
+            "gamepad",
+            "vr"
+          ],
+          "bindings": [
+            {
+              "device": "keyboardMouse",
+              "kind": "KeyCode",
+              "value": "Escape"
+            },
+            {
+              "device": "gamepad",
+              "kind": "KeyCode",
+              "value": "ButtonB"
+            },
+            {
+              "device": "touch",
+              "kind": "UIButton",
+              "value": "Menu/Back"
+            },
+            {
+              "device": "vr",
+              "kind": "KeyCode",
+              "value": "ButtonB",
+              "role": "ActiveController"
+            }
+          ],
+          "prompt": {
+            "label": "Back",
+            "holdLabel": null
+          },
+          "serverValidation": [],
+          "accessibility": [
+            "visible back control"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VehicleContext",
+      "priority": 2500,
+      "sink": false,
+      "enabledByDefault": false,
+      "notes": "Example custom vehicle controls. Replace with project-specific requirements.",
+      "actions": [
+        {
+          "id": "VehicleSteer",
+          "type": "Direction1D",
+          "semantics": "Continuous left/right steering.",
+          "authority": "split",
+          "devices": [
+            "keyboardMouse",
+            "touch",
+            "gamepad"
+          ],
+          "bindings": [
+            {
+              "device": "keyboardMouse",
+              "kind": "Composite1D",
+              "negative": "A",
+              "positive": "D"
+            },
+            {
+              "device": "gamepad",
+              "kind": "Axis1D",
+              "value": "Thumbstick1X",
+              "deadzone": 0.12,
+              "responseCurve": "linear"
+            },
+            {
+              "device": "touch",
+              "kind": "VirtualAxis",
+              "value": "Vehicle/Steer"
+            }
+          ],
+          "prompt": {
+            "label": "Steer",
+            "holdLabel": null
+          },
+          "serverValidation": [
+            "vehicle ownership/seat",
+            "value range",
+            "state"
+          ],
+          "accessibility": [
+            "steering sensitivity",
+            "left/right button alternative"
+          ]
+        },
+        {
+          "id": "VehicleThrottle",
+          "type": "Direction1D",
+          "semantics": "Continuous signed or zero-to-one throttle according to vehicle contract.",
+          "authority": "split",
+          "devices": [
+            "keyboardMouse",
+            "touch",
+            "gamepad"
+          ],
+          "bindings": [
+            {
+              "device": "keyboardMouse",
+              "kind": "Composite1D",
+              "negative": "S",
+              "positive": "W"
+            },
+            {
+              "device": "gamepad",
+              "kind": "CompositeTriggers",
+              "negative": "ButtonL2",
+              "positive": "ButtonR2"
+            },
+            {
+              "device": "touch",
+              "kind": "VirtualAxis",
+              "value": "Vehicle/Throttle"
+            }
+          ],
+          "prompt": {
+            "label": "Accelerate / Brake",
+            "holdLabel": null
+          },
+          "serverValidation": [
+            "vehicle ownership/seat",
+            "value range",
+            "state"
+          ],
+          "accessibility": [
+            "toggle cruise option when suitable",
+            "separate button alternative"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VRContext",
+      "priority": 2600,
+      "sink": false,
+      "enabledByDefault": false,
+      "notes": "Enabled only when VR-specific mechanics are in scope. Generic actions may remain in GameplayContext.",
+      "actions": [
+        {
+          "id": "TeleportAim",
+          "type": "Bool",
+          "semantics": "Hold to preview a valid teleport destination; release to request it.",
+          "authority": "split",
+          "devices": [
+            "vr"
+          ],
+          "bindings": [
+            {
+              "device": "vr",
+              "kind": "KeyCode",
+              "value": "ButtonL2",
+              "role": "LocomotionHand"
+            }
+          ],
+          "prompt": {
+            "label": "Teleport",
+            "holdLabel": "Hold to aim"
+          },
+          "serverValidation": [
+            "player state",
+            "destination bounds",
+            "surface/slope",
+            "clearance",
+            "cooldown"
+          ],
+          "accessibility": [
+            "smooth locomotion alternative",
+            "dominant locomotion hand setting"
+          ]
+        },
+        {
+          "id": "RecenterVR",
+          "type": "Bool",
+          "semantics": "Request a supported VR recenter and reconcile body/UI origin.",
+          "authority": "local",
+          "devices": [
+            "vr"
+          ],
+          "bindings": [
+            {
+              "device": "vr",
+              "kind": "KeyCode",
+              "value": "ButtonStart",
+              "role": "EitherController"
+            }
+          ],
+          "prompt": {
+            "label": "Recenter",
+            "holdLabel": null
+          },
+          "serverValidation": [],
+          "accessibility": [
+            "settings menu action"
+          ]
+        }
+      ]
+    }
+  ],
+  "uiTasks": [
+    {
+      "id": "InventoryFlow",
+      "screens": [
+        "Inventory"
+      ],
+      "steps": [
+        "open inventory",
+        "navigate to an off-screen item",
+        "open item actions",
+        "equip or use",
+        "return to gameplay"
+      ],
+      "requiredDevices": [
+        "keyboardMouse",
+        "touch",
+        "gamepad",
+        "vr"
+      ]
+    }
+  ],
+  "hotSwapTests": [
+    "keyboardMouse->gamepad during gameplay",
+    "gamepad->keyboardMouse in a modal",
+    "touch->gamepad while inventory is open",
+    "gamepad disconnect while an action is held"
+  ],
+  "knownExclusions": []
+}
