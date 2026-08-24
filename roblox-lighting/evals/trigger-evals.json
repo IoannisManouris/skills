@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "skill_name": "roblox-lighting",
+  "purpose": "Positive, negative, and near-miss trigger tests for autonomous skill discovery.",
+  "cases": [
+    {
+      "id": "positive-basic-lighting",
+      "prompt": "Make the lighting in my Roblox game look professional.",
+      "should_trigger": true,
+      "reason": "Direct Roblox scene-lighting request."
+    },
+    {
+      "id": "positive-misspelling",
+      "prompt": "Can you improve my Roblox lightning? The map looks flat.",
+      "should_trigger": true,
+      "reason": "Common misspelling in a scene-illumination context."
+    },
+    {
+      "id": "positive-copy-screenshot",
+      "prompt": "Copy this Roblox game's lighting from the screenshot.",
+      "should_trigger": true,
+      "reason": "Core single-image reconstruction workflow."
+    },
+    {
+      "id": "positive-url-and-image",
+      "prompt": "Here is a Roblox link and one image. Research the game and recreate the same sunset lighting.",
+      "should_trigger": true,
+      "reason": "Core link-assisted matching workflow."
+    },
+    {
+      "id": "positive-atmosphere",
+      "prompt": "Tune Atmosphere Density, Haze, Glare, and Color for my Roblox mountain map.",
+      "should_trigger": true,
+      "reason": "Roblox atmosphere is part of scene lighting."
+    },
+    {
+      "id": "positive-post-processing",
+      "prompt": "Set up Bloom, ColorCorrection, ColorGrading, SunRays, and depth of field in Roblox Studio.",
+      "should_trigger": true,
+      "reason": "Roblox lighting-related post-processing."
+    },
+    {
+      "id": "positive-local-lights",
+      "prompt": "My PointLights and SurfaceLights overlap and tank mobile performance. Fix them.",
+      "should_trigger": true,
+      "reason": "Local-light optimization is in scope."
+    },
+    {
+      "id": "positive-night-horror",
+      "prompt": "Create dark but playable horror lighting for a Roblox forest.",
+      "should_trigger": true,
+      "reason": "Genre- and gameplay-aware lighting creation."
+    },
+    {
+      "id": "positive-fps-fairness",
+      "prompt": "Audit doorway visibility and shadows in my Roblox FPS so enemies remain fair.",
+      "should_trigger": true,
+      "reason": "Lighting audit tied to gameplay fairness."
+    },
+    {
+      "id": "positive-pbr",
+      "prompt": "Why do my Roblox metal SurfaceAppearance assets look too shiny under this sky? Match the reference.",
+      "should_trigger": true,
+      "reason": "PBR/environment response is a lighting confounder."
+    },
+    {
+      "id": "positive-clouds-sky",
+      "prompt": "Build a cloudy sunrise with a custom Sky and Terrain Clouds in Roblox.",
+      "should_trigger": true,
+      "reason": "Global environment creation."
+    },
+    {
+      "id": "positive-day-night",
+      "prompt": "Create a smooth Roblox day-night lighting cycle that keeps interiors readable.",
+      "should_trigger": true,
+      "reason": "Runtime lighting profiles and transitions."
+    },
+    {
+      "id": "positive-mobile-scalability",
+      "prompt": "Give my Roblox lighting low, medium, and high quality tiers for phones and PC.",
+      "should_trigger": true,
+      "reason": "Lighting scalability is in scope."
+    },
+    {
+      "id": "positive-current-api",
+      "prompt": "What should I use instead of Lighting.Technology Future in modern Roblox Studio?",
+      "should_trigger": true,
+      "reason": "Current Lighting API and legacy migration."
+    },
+    {
+      "id": "positive-debug-black-map",
+      "prompt": "My Roblox map is completely black after I added Atmosphere. Diagnose it.",
+      "should_trigger": true,
+      "reason": "Lighting debugging request."
+    },
+    {
+      "id": "positive-studio-script",
+      "prompt": "Generate Luau that safely applies this Roblox lighting plan and can roll it back.",
+      "should_trigger": true,
+      "reason": "Studio implementation of a lighting plan."
+    },
+    {
+      "id": "positive-obby-guidance",
+      "prompt": "Use lighting and color contrast to guide players through my obby without arrows.",
+      "should_trigger": true,
+      "reason": "Map-aware visual hierarchy and navigation."
+    },
+    {
+      "id": "positive-lightning-flash-illumination",
+      "prompt": "Create lightning storm flashes that briefly illuminate my Roblox horror map and expose silhouettes.",
+      "should_trigger": true,
+      "reason": "Electrical lightning is present, but scene illumination and exposure behavior are explicitly requested."
+    },
+    {
+      "id": "negative-electric-bolt-vfx",
+      "prompt": "Script a branching lightning bolt Beam attack in Roblox that damages enemies.",
+      "should_trigger": false,
+      "reason": "Electrical bolt combat VFX with no scene-lighting request."
+    },
+    {
+      "id": "negative-weather-facts",
+      "prompt": "Why does lightning strike tall buildings?",
+      "should_trigger": false,
+      "reason": "Real-world meteorology, not Roblox scene lighting."
+    },
+    {
+      "id": "negative-minecraft",
+      "prompt": "Install a Minecraft shader and fix torch lighting.",
+      "should_trigger": false,
+      "reason": "Different game and rendering system."
+    },
+    {
+      "id": "negative-blender",
+      "prompt": "Set up three-point product lighting in Blender Cycles.",
+      "should_trigger": false,
+      "reason": "Not Roblox."
+    },
+    {
+      "id": "negative-photoshop",
+      "prompt": "Relight this portrait in Photoshop.",
+      "should_trigger": false,
+      "reason": "Image editing rather than Roblox lighting."
+    },
+    {
+      "id": "negative-roblox-ui",
+      "prompt": "Design a Roblox inventory UI with rounded cards.",
+      "should_trigger": false,
+      "reason": "Roblox task unrelated to environment lighting."
+    },
+    {
+      "id": "negative-datastore",
+      "prompt": "Fix my Roblox OrderedDataStore leaderboard.",
+      "should_trigger": false,
+      "reason": "Roblox scripting request unrelated to lighting."
+    },
+    {
+      "id": "negative-thumbnail-edit",
+      "prompt": "Make a brighter Roblox YouTube thumbnail from this image.",
+      "should_trigger": false,
+      "reason": "Marketing image editing, unless the user explicitly asks to derive in-game Lighting settings."
+    },
+    {
+      "id": "negative-house-bulbs",
+      "prompt": "Which LED light bulbs should I buy for my bedroom?",
+      "should_trigger": false,
+      "reason": "Physical consumer lighting."
+    },
+    {
+      "id": "near-miss-script-color",
+      "prompt": "Change a Roblox Part's BrickColor when clicked.",
+      "should_trigger": false,
+      "reason": "A color script is not necessarily scene lighting."
+    },
+    {
+      "id": "near-miss-neon-sign",
+      "prompt": "Make a Neon sign model in Roblox, including emissive appearance and the light it casts on the alley.",
+      "should_trigger": true,
+      "reason": "The request explicitly includes local illumination and material response."
+    },
+    {
+      "id": "near-miss-image-analysis-only",
+      "prompt": "Tell me whether this Roblox screenshot is daytime or sunset.",
+      "should_trigger": true,
+      "reason": "Visual lighting analysis can invoke the observation workflow even without implementation."
+    }
+  ]
+}

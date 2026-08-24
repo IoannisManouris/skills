@@ -1,0 +1,23 @@
+{
+  "package": "roblox-lighting",
+  "version": "1.0.0",
+  "built_at_utc": "2026-08-24T00:49:21Z",
+  "technical_basis": "The originating Roblox lighting deep-research report and its full requested scope, mapped in references/report-traceability.md.",
+  "web_verification_date": "2026-08-24",
+  "validation": {
+    "bundled_skill_validator": "passed with 0 errors and 0 warnings",
+    "offline_check_runner": "passed with 0 errors and 0 warnings",
+    "python_compile": "passed",
+    "json_and_schema_checks": "passed",
+    "example_plan_and_observation_checks": "passed",
+    "luau_generation_static_checks": "passed",
+    "optional_image_helper_smoke_tests": "passed",
+    "official_skills_ref_validator": "not run because the executable was not installed in the build environment",
+    "roblox_studio_runtime_and_visual_test": "not run because Roblox Studio was not available in the build environment",
+    "live_public_roblox_endpoint_test": "attempted previously; build environment DNS was unavailable, and graceful failure/output logging was verified instead"
+  },
+  "integrity": {
+    "file_manifest": "MANIFEST.sha256",
+    "archive_checksum": "reported alongside the distributed ZIP"
+  }
+}

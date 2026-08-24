@@ -1,0 +1,106 @@
+{
+  "warning": "These are starting hypotheses only. Tune against the actual map, materials, camera, gameplay, graphics quality, and reference evidence.",
+  "version": "1.0",
+  "profiles": {
+    "horror": {
+      "LightingStyle": "Realistic",
+      "ClockTime_range": [0, 5],
+      "ExposureCompensation_range": [-0.8, 0.0],
+      "ShadowSoftness_range": [0.2, 0.6],
+      "EnvironmentDiffuseScale_range": [0.15, 0.5],
+      "AtmosphereDensity_range": [0.15, 0.45],
+      "posture": "cool low environment fill; warm motivated practical islands; preserve immediate threat and route detail"
+    },
+    "realistic_outdoor": {
+      "LightingStyle": "Realistic",
+      "ClockTime_range": [8, 16],
+      "ExposureCompensation_range": [-0.4, 0.4],
+      "ShadowSoftness_range": [0.2, 0.65],
+      "EnvironmentDiffuseScale_range": [0.7, 1.0],
+      "EnvironmentSpecularScale_range": [0.7, 1.0],
+      "AtmosphereDensity_range": [0.12, 0.35],
+      "posture": "coherent sun/sky/PBR response with restrained grade"
+    },
+    "stylized_cartoon": {
+      "LightingStyle_options": ["Realistic", "Soft"],
+      "ClockTime_range": [9, 15],
+      "ExposureCompensation_range": [-0.15, 0.35],
+      "ShadowSoftness_range": [0.35, 0.8],
+      "EnvironmentDiffuseScale_range": [0.4, 0.8],
+      "AtmosphereDensity_range": [0.05, 0.2],
+      "posture": "clean shape readability and controlled color accents"
+    },
+    "simulator_tycoon": {
+      "LightingStyle_options": ["Realistic", "Soft"],
+      "ClockTime_range": [9, 15],
+      "ExposureCompensation_range": [0.0, 0.35],
+      "ShadowSoftness_range": [0.45, 0.8],
+      "EnvironmentDiffuseScale_range": [0.55, 0.9],
+      "AtmosphereDensity_range": [0.03, 0.18],
+      "posture": "stable bright scanning conditions; progression objects have ranked accents"
+    },
+    "obby_platformer": {
+      "LightingStyle_options": ["Realistic", "Soft"],
+      "ClockTime_range": [9, 15],
+      "ExposureCompensation_range": [-0.1, 0.25],
+      "ShadowSoftness_range": [0.3, 0.7],
+      "AtmosphereDensity_range": [0.0, 0.15],
+      "posture": "contact shadows and clear landing silhouettes; minimal bloom and depth blur"
+    },
+    "competitive_fps": {
+      "LightingStyle": "Realistic",
+      "ClockTime_range": [9, 15],
+      "ExposureCompensation_range": [-0.15, 0.2],
+      "ShadowSoftness_range": [0.35, 0.7],
+      "AtmosphereDensity_range": [0.0, 0.2],
+      "posture": "stable fair visibility; no target information dependent on shadows or post effects"
+    },
+    "adventure_rpg": {
+      "LightingStyle": "Realistic",
+      "ClockTime_range": [6, 19],
+      "ExposureCompensation_range": [-0.5, 0.4],
+      "ShadowSoftness_range": [0.25, 0.75],
+      "AtmosphereDensity_range": [0.1, 0.4],
+      "posture": "named biome profiles with persistent landmark and combat readability"
+    },
+    "showcase_cinematic": {
+      "LightingStyle": "Realistic",
+      "ExposureCompensation_range": [-0.5, 0.25],
+      "EnvironmentDiffuseScale_range": [0.7, 1.0],
+      "EnvironmentSpecularScale_range": [0.7, 1.0],
+      "ShadowSoftness_range": [0.2, 0.7],
+      "posture": "material-calibrated key/fill/rim; camera-local depth of field only"
+    },
+    "cozy_social": {
+      "LightingStyle": "Realistic",
+      "ClockTime_range": [7, 18],
+      "ExposureCompensation_range": [-0.1, 0.3],
+      "ShadowSoftness_range": [0.5, 0.85],
+      "AtmosphereDensity_range": [0.08, 0.25],
+      "posture": "warm practicals with neutral/cool support and flattering avatar readability"
+    },
+    "scifi_neon": {
+      "LightingStyle": "Realistic",
+      "ExposureCompensation_range": [-0.6, 0.05],
+      "EnvironmentDiffuseScale_range": [0.15, 0.55],
+      "EnvironmentSpecularScale_range": [0.55, 1.0],
+      "AtmosphereDensity_range": [0.1, 0.35],
+      "posture": "dark neutral structure, limited accent palette, real colored spill, thresholded bloom"
+    },
+    "racing": {
+      "LightingStyle": "Realistic",
+      "ClockTime_range": [8, 17],
+      "ExposureCompensation_range": [-0.2, 0.25],
+      "ShadowSoftness_range": [0.3, 0.7],
+      "AtmosphereDensity_range": [0.05, 0.25],
+      "posture": "road edges, opponents, signs, and braking points remain readable at speed"
+    },
+    "retro_classic": {
+      "LightingStyle": "Soft",
+      "TonemapperPreset_options": ["Default", "Retro"],
+      "ExposureCompensation_range": [-0.2, 0.2],
+      "AtmosphereDensity_range": [0.0, 0.1],
+      "posture": "deliberately simple shading and restrained effects; verify brightness under Retro"
+    }
+  }
+}

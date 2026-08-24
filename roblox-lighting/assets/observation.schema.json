@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/roblox-lighting/observation.schema.json",
+  "title": "Roblox Lighting Observation Ledger",
+  "type": "object",
+  "required": ["schema_version", "mode", "sources", "observations", "hypotheses", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "mode": {
+      "enum": ["FROM_SCRATCH", "MATCH_SCREENSHOT", "LINK_ASSISTED_MATCH", "IMPROVE_OR_DEBUG", "AUDIT_OR_OPTIMIZE"]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "source_type", "included"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "url": {"type": ["string", "null"]},
+          "file": {"type": ["string", "null"]},
+          "source_type": {
+            "enum": [
+              "user_screenshot",
+              "user_video_frame",
+              "official_experience_media",
+              "official_thumbnail",
+              "creator_media",
+              "third_party_gameplay",
+              "web_image",
+              "studio_capture",
+              "settings_dump",
+              "other"
+            ]
+          },
+          "experience_identity_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "raw_gameplay_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "capture_or_publish_date": {"type": ["string", "null"]},
+          "map_cluster": {"type": ["string", "null"]},
+          "lighting_cluster": {"type": ["string", "null"]},
+          "similarity_to_primary": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+          "included": {"type": "boolean"},
+          "notes": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "evidence", "inference", "confidence", "alternatives", "confounders"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "category": {
+            "enum": [
+              "camera",
+              "geometry",
+              "materials",
+              "global_light",
+              "shadows",
+              "ambient_fill",
+              "exposure_tone",
+              "sky_clouds",
+              "atmosphere_fog",
+              "local_lights",
+              "emissive_bloom",
+              "reflections",
+              "post_processing",
+              "gameplay_readability",
+              "performance",
+              "accessibility",
+              "other"
+            ]
+          },
+          "source_ids": {"type": "array", "items": {"type": "string"}},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "inference": {"type": "string", "minLength": 1},
+          "roblox_targets": {"type": "array", "items": {"type": "string"}},
+          "estimate": {
+            "type": ["object", "string", "number", "boolean", "null"],
+            "additionalProperties": true
+          },
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "alternatives": {"type": "array", "items": {"type": "string"}},
+          "confounders": {"type": "array", "items": {"type": "string"}},
+          "next_view": {"type": ["string", "null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "summary", "confidence", "explains", "assumptions", "roblox_feasibility", "gameplay_fit"],
+        "properties": {
+          "id": {"type": "string"},
+          "summary": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "explains": {"type": "array", "items": {"type": "string"}},
+          "assumptions": {"type": "array", "items": {"type": "string"}},
+          "roblox_feasibility": {"type": "number", "minimum": 0, "maximum": 1},
+          "gameplay_fit": {"type": "number", "minimum": 0, "maximum": 1},
+          "performance_risk": {"enum": ["low", "medium", "high", "unknown"]},
+          "rejected_if": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "preferred_hypothesis_id": {"type": ["string", "null"]},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "requested_additional_views": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["view", "information_gain"],
+        "properties": {
+          "view": {"type": "string"},
+          "information_gain": {"type": "string"},
+          "priority": {"type": "integer", "minimum": 1}
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

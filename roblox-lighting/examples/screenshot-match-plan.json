@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0",
+  "plan_id": "neon-alley-screenshot-match",
+  "generated_at": "2026-08-24T00:34:49+00:00",
+  "mode": "MATCH_SCREENSHOT",
+  "intent": {
+    "thesis": "Starting hypothesis for scifi_neon: dark neutral structure, limited accent palette, real colored spill, thresholded bloom",
+    "genre": "scifi_neon",
+    "mood": [
+      "moody",
+      "neon"
+    ],
+    "target_state": "night alley reference frame",
+    "camera_use": "third-person gameplay",
+    "minimum_platform": "low-end mobile"
+  },
+  "sources": [
+    {
+      "source_id": "primary-frame",
+      "source_type": "user_screenshot",
+      "file": "reference-neon-alley.png",
+      "included": true,
+      "lighting_cluster": "night-neon"
+    }
+  ],
+  "assumptions": [
+    "The reference frame is approximately raw gameplay output.",
+    "The target map has equivalent scale, camera framing, receiving surfaces, and fixture locations.",
+    "Floor material roughness and normal response will be calibrated before specular lighting is finalized."
+  ],
+  "confidence": 0.61,
+  "lighting": {
+    "properties": {
+      "Ambient": [
+        12,
+        16,
+        28
+      ],
+      "Brightness": 1.15,
+      "ClockTime": 1.7,
+      "ColorShift_Bottom": [
+        0,
+        0,
+        0
+      ],
+      "ColorShift_Top": [
+        0,
+        0,
+        0
+      ],
+      "EnvironmentDiffuseScale": 0.26,
+      "EnvironmentSpecularScale": 0.88,
+      "ExposureCompensation": -0.34,
+      "GeographicLatitude": 38,
+      "GlobalShadows": true,
+      "LightingStyle": "Realistic",
+      "OutdoorAmbient": [
+        30,
+        38,
+        58
+      ],
+      "PrioritizeLightingQuality": true,
+      "ShadowSoftness": 0.52
+    },
+    "manual_properties": {},
+    "sky": {
+      "enabled": true,
+      "name": "RobloxLightingSky",
+      "properties": {
+        "CelestialBodiesShown": true,
+        "StarCount": 3000,
+        "SunAngularSize": 21,
+        "MoonAngularSize": 11
+      }
+    },
+    "atmosphere": {
+      "enabled": true,
+      "name": "RobloxLightingAtmosphere",
+      "properties": {
+        "Color": [
+          112,
+          132,
+          174
+        ],
+        "Decay": [
+          30,
+          35,
+          66
+        ],
+        "Density": 0.22,
+        "Glare": 0.05,
+        "Haze": 1.65,
+        "Offset": 0.03
+      }
+    },
+    "legacy_fog": {
+      "enabled": false
+    },
+    "clouds": null,
+    "post_effects": [
+      {
+        "class": "ColorGradingEffect",
+        "name": "RobloxLightingToneMapper",
+        "parent": "Lighting",
+        "enabled": true,
+        "properties": {
+          "TonemapperPreset": "Default"
+        },
+        "quality_tiers": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "rationale": "Keep one explicit tone-mapper authority."
+      },
+      {
+        "class": "ColorCorrectionEffect",
+        "name": "RobloxLightingGrade",
+        "parent": "Lighting",
+        "enabled": true,
+        "properties": {
+          "Brightness": 0.0,
+          "Contrast": 0.1,
+          "Saturation": 0.07,
+          "TintColor": [
+            225,
+            235,
+            255
+          ]
+        },
+        "quality_tiers": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "rationale": "Near-neutral starting grade; solve illumination first."
+      },
+      {
+        "class": "BloomEffect",
+        "name": "RobloxLightingBloom",
+        "parent": "Lighting",
+        "enabled": true,
+        "properties": {
+          "Intensity": 0.34,
+          "Size": 24,
+          "Threshold": 0.82
+        },
+        "quality_tiers": [
+          "medium",
+          "high"
+        ],
+        "rationale": "Restrained highlight spread; tune threshold before intensity."
+      }
+    ]
+  },
+  "local_lights": [
+    {
+      "id": "cyan-sign-spill",
+      "class": "PointLight",
+      "name": "CyanSignSpill",
+      "target_path": "/Workspace/LightingFixtures/CyanSign/LightAttachment",
+      "properties": {
+        "Enabled": true,
+        "Color": [
+          38,
+          224,
+          255
+        ],
+        "Brightness": 2.2,
+        "Shadows": false,
+        "Range": 20
+      },
+      "quality_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "rationale": "Motivated cyan spill from the visible sign; keep range local to adjacent floor and wall.",
+      "activation_group": "alley-neon",
+      "source_visible": true,
+      "confidence": 0.74
+    },
+    {
+      "id": "magenta-panel-wash",
+      "class": "SurfaceLight",
+      "name": "MagentaPanelWash",
+      "target_path": "/Workspace/LightingFixtures/MagentaPanel",
+      "properties": {
+        "Enabled": true,
+        "Color": [
+          255,
+          54,
+          185
+        ],
+        "Brightness": 1.8,
+        "Shadows": false,
+        "Range": 24,
+        "Angle": 105,
+        "Face": "Front"
+      },
+      "quality_tiers": [
+        "medium",
+        "high"
+      ],
+      "rationale": "Broad directional wash from the wall panel; removed on low tier if route remains readable.",
+      "activation_group": "alley-neon",
+      "source_visible": true,
+      "confidence": 0.71
+    },
+    {
+      "id": "route-fill",
+      "class": "SpotLight",
+      "name": "SubtleRouteFill",
+      "target_path": "/Workspace/LightingFixtures/RouteFillAttachment",
+      "properties": {
+        "Enabled": true,
+        "Color": [
+          104,
+          133,
+          190
+        ],
+        "Brightness": 0.65,
+        "Shadows": false,
+        "Range": 28,
+        "Angle": 80,
+        "Face": "Front"
+      },
+      "quality_tiers": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "rationale": "Low-contrast route support that remains neutral enough not to compete with neon accents.",
+      "activation_group": "alley-route",
+      "source_visible": false,
+      "confidence": 0.48
+    }
+  ],
+  "material_geometry_actions": [
+    {
+      "target": "Alley floor",
+      "action": "Calibrate roughness/normal response for elongated colored reflections before raising EnvironmentSpecularScale further.",
+      "reason": "Reference floor highlights are material-dependent and cannot be reproduced by lighting alone.",
+      "priority": "required"
+    },
+    {
+      "target": "Neon source meshes",
+      "action": "Use emissive-looking/Neon source geometry while keeping real local lights responsible for nearby spill.",
+      "reason": "Bloom does not illuminate receiving surfaces.",
+      "priority": "required"
+    },
+    {
+      "target": "Side recesses",
+      "action": "Seal geometry and audit wall thickness/normals before increasing ambient fill.",
+      "reason": "Leaks or missing occlusion would flatten the intended contrast.",
+      "priority": "recommended"
+    }
+  ],
+  "runtime_profiles": [],
+  "quality_tiers": {
+    "low": {
+      "goal": "Preserve route, hazard, avatar, and interactable readability with minimal optional effects.",
+      "enabled_light_ids": [
+        "cyan-sign-spill",
+        "route-fill"
+      ],
+      "enabled_post_effects": [
+        "RobloxLightingToneMapper",
+        "RobloxLightingGrade"
+      ],
+      "notes": [
+        "Do not depend on dynamic shadows or bloom for gameplay information."
+      ]
+    },
+    "medium": {
+      "goal": "Preserve the intended mood with restrained effects and selected local lights.",
+      "enabled_light_ids": [
+        "cyan-sign-spill",
+        "magenta-panel-wash",
+        "route-fill"
+      ],
+      "enabled_post_effects": [
+        "RobloxLightingToneMapper",
+        "RobloxLightingGrade",
+        "RobloxLightingBloom"
+      ],
+      "notes": [
+        "Profile the densest camera view."
+      ]
+    },
+    "high": {
+      "goal": "Full approved art direction without sacrificing gameplay clarity.",
+      "enabled_light_ids": [
+        "cyan-sign-spill",
+        "magenta-panel-wash",
+        "route-fill"
+      ],
+      "enabled_post_effects": [
+        "RobloxLightingToneMapper",
+        "RobloxLightingGrade",
+        "RobloxLightingBloom"
+      ],
+      "notes": [
+        "Validate specular response, shadow quality, and atmosphere at native resolution."
+      ]
+    }
+  },
+  "validation": {
+    "views": [
+      {
+        "id": "reference-camera",
+        "purpose": "regional screenshot comparison at matched FOV and framing"
+      },
+      {
+        "id": "reverse-alley",
+        "purpose": "detect hidden-light and atmosphere mistakes not visible in the reference"
+      },
+      {
+        "id": "avatar-route",
+        "purpose": "player silhouette, route, hazards, interactables, and UI"
+      },
+      {
+        "id": "dense-neon-view",
+        "purpose": "worst overlapping-light/post-effect performance view"
+      }
+    ],
+    "image_metrics": [
+      "regional luma percentiles",
+      "clipped black/white fraction",
+      "shadow-direction agreement"
+    ],
+    "gameplay_gates": [
+      "Primary route is readable within two seconds.",
+      "Critical hazards and interactables remain distinguishable on low quality.",
+      "No required information depends only on color, bloom, or dynamic shadows."
+    ],
+    "performance_gates": [
+      "Profile representative low, medium, and high graphics conditions.",
+      "No avoidable dense overlap of large shadow-casting local lights."
+    ],
+    "stopping_criteria": [
+      "Reference camera reaches acceptable regional luma/color/shadow/fog agreement without extreme post effects.",
+      "Route, avatar, hazards, and interactables remain readable on low quality.",
+      "Two consecutive fine iterations yield negligible perceptual improvement.",
+      "Remaining mismatches are attributable to documented camera, material, geometry, asset, or renderer differences."
+    ]
+  },
+  "unresolved_ambiguities": [
+    {
+      "question": "Is the screenshot externally color graded?",
+      "impact": "Could bias exposure, tint, saturation, contrast, and bloom estimates.",
+      "best_next_evidence": "Raw in-client frame from the same scene.",
+      "confidence": 0.35
+    },
+    {
+      "question": "Are floor highlights dynamically reflected or painted into textures?",
+      "impact": "Changes the required PBR material work and environment specular balance.",
+      "best_next_evidence": "Short camera movement across the floor.",
+      "confidence": 0.5
+    },
+    {
+      "question": "What world scale and camera FOV produced the apparent local-light falloff?",
+      "impact": "Directly affects Range, Angle, and fixture placement.",
+      "best_next_evidence": "Uncropped frame plus one known-size object or Studio map metadata.",
+      "confidence": 0.42
+    }
+  ]
+}

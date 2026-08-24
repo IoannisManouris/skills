@@ -1,0 +1,64 @@
+{
+  "manifest_version": "1.0",
+  "format": "agentskills.io",
+  "name": "roblox-lighting",
+  "version": "1.0.0",
+  "entrypoint": "SKILL.md",
+  "display_name": "Roblox Lighting Director",
+  "terminology_note": "The canonical package name is 'roblox-lighting'; the common misspelling 'roblox-lightning' remains a discovery alias, while electrical lightning-bolt VFX are outside scope unless scene illumination is also requested.",
+  "aliases": [
+    "roblox-lightning",
+    "roblox-lighting-director",
+    "roblox-scene-lighting",
+    "roblox-lighting-copy",
+    "roblox-lighting-from-screenshot"
+  ],
+  "modes": [
+    "FROM_SCRATCH",
+    "MATCH_SCREENSHOT",
+    "LINK_ASSISTED_MATCH",
+    "IMPROVE_OR_DEBUG",
+    "AUDIT_OR_OPTIMIZE"
+  ],
+  "primary_inputs": [
+    "user goal",
+    "genre and map metadata",
+    "one or more screenshots",
+    "optional Roblox experience URL",
+    "optional current settings or Studio audit",
+    "target devices and gameplay requirements"
+  ],
+  "primary_outputs": [
+    "observation ledger",
+    "ranked lighting hypotheses with confidence",
+    "validated lighting-plan.json",
+    "Studio-ready Luau apply script",
+    "optional Camera-local effects script",
+    "rollback instructions",
+    "validation and unresolved-ambiguity report"
+  ],
+  "optional_dependencies": {
+    "python": ">=3.10",
+    "Pillow": "required only for image_metrics.py and cluster_images.py",
+    "network": "required for public Roblox-link research and web/image search",
+    "roblox_studio": "recommended for direct implementation and visual validation"
+  },
+  "safety_defaults": [
+    "do not claim exact hidden settings from one image",
+    "do not bypass authentication or access private Roblox data",
+    "do not copy unlicensed sky or texture assets",
+    "back up affected state before edits",
+    "preserve unmanaged instances unless conflict replacement is explicitly selected",
+    "never make gameplay-critical information depend only on post effects, color, or shadows"
+  ],
+  "discovery": {
+    "standard_entrypoint": "SKILL.md",
+    "openai_metadata": "agents/openai.yaml",
+    "implicit_invocation": true,
+    "trigger_eval_file": "evals/trigger-evals.json"
+  },
+  "validation": {
+    "offline_command": "python scripts/run_checks.py .",
+    "reference_command": "skills-ref validate ."
+  }
+}

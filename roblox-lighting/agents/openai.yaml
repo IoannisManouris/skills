@@ -1,0 +1,7 @@
+interface:
+  display_name: "Roblox Lighting Director"
+  short_description: "Create or match Roblox lighting from screenshots"
+  brand_color: "#6E5AE6"
+  default_prompt: "Use $roblox-lighting to create a Roblox lighting setup from scratch or reconstruct one from screenshots, then generate a validated plan and reversible Studio-ready Luau."
+policy:
+  allow_implicit_invocation: true

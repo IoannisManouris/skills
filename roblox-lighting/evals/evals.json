@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "skill_name": "roblox-lighting",
+  "purpose": "Behavioral evaluations for autonomous Roblox scene-lighting creation, reconstruction, implementation, and validation.",
+  "evals": [
+    {
+      "id": "from-scratch-cozy-mobile",
+      "mode": "FROM_SCRATCH",
+      "prompt": "Create the lighting for a cozy Roblox social cafe with large windows, warm wood, pastel furniture, an outdoor garden, and a minimum target of older phones. Make it inviting without washing out UI or making the garden unreadable.",
+      "expected_output": "A map-aware lighting thesis, explicit assumptions, a valid lighting plan, quality tiers, a Studio-ready implementation path, and gameplay/accessibility validation. Numeric settings are labeled as starting hypotheses rather than universal values.",
+      "assertions": [
+        "Selects FROM_SCRATCH without requesting information already present.",
+        "Explains visual hierarchy and interior/exterior balance before choosing effects.",
+        "Uses restrained bloom and color grading rather than effects as the primary light source.",
+        "Includes a mobile fallback and tests UI, player silhouettes, entrances, and the garden route.",
+        "Produces or offers machine-actionable lighting-plan.json and Luau when filesystem tools are available."
+      ]
+    },
+    {
+      "id": "single-screenshot-inverse-rendering",
+      "mode": "MATCH_SCREENSHOT",
+      "prompt": "Match this single Roblox gameplay screenshot as closely as possible. It has a purple dusk sky, long shadows, blue fog in the distance, warm lamps, and strong glowing signs. I do not know the original settings.",
+      "files": [
+        "reference.png"
+      ],
+      "expected_output": "An observation ledger that separates evidence from hypotheses, estimates parameter ranges and confidence, identifies camera/material confounders, generates competing hypotheses if needed, and follows dependency-ordered iteration instead of guessing exact hidden settings.",
+      "assertions": [
+        "Selects MATCH_SCREENSHOT.",
+        "Does not claim to recover exact source properties from one image.",
+        "Analyzes sun direction, shadow length/softness, ambient fill, atmosphere, local lights, emissives, exposure, grading, bloom, and camera/FOV cues.",
+        "Separates lighting mismatch from geometry, materials, textures, and camera response.",
+        "Specifies at least one high-information additional view while still completing a best-effort first pass."
+      ]
+    },
+    {
+      "id": "roblox-link-assisted-match",
+      "mode": "LINK_ASSISTED_MATCH",
+      "prompt": "Use this screenshot and https://www.roblox.com/games/1234567890/example-game to recreate the game's lighting in my own map. Find more public gameplay screenshots with the same lighting condition before deciding the settings.",
+      "files": [
+        "snapshot.png"
+      ],
+      "expected_output": "Public-only Roblox research, a source ledger, candidate media grouped/ranked by likely lighting state, authenticity and recency caveats, visual confirmation, then confidence-aware screenshot reconstruction.",
+      "assertions": [
+        "Extracts the place ID and attempts current public place-to-universe, metadata, media, and thumbnail sources when tools permit.",
+        "Supplements official media with web/image search queries when useful.",
+        "Ranks or clusters candidates by broad appearance but visually verifies map/state identity before treating them as evidence.",
+        "Treats promotional thumbnails as potentially staged, edited, or outdated.",
+        "Never requests cookies, bypasses authentication, or claims access to the game's source settings."
+      ]
+    },
+    {
+      "id": "horror-readability-repair",
+      "mode": "IMPROVE_OR_DEBUG",
+      "prompt": "My Roblox horror game is atmospheric but testers keep getting lost and say everything is black. Improve it without removing the horror mood. The player carries a flashlight and enemies must remain fair.",
+      "expected_output": "A diagnosis that preserves darkness as composition rather than clipping, a hierarchy of safe dark values and focal pools, flashlight/local-light guidance, fairness tests, and a staged validation plan.",
+      "assertions": [
+        "Does not solve the problem by globally over-brightening the map.",
+        "Checks crushed blacks, ambient fill, exposure, materials, fog, and display/quality differences.",
+        "Uses contrast, silhouettes, landmarks, practical lights, and route rhythm to guide players.",
+        "Tests enemy telegraphs and hazards at minimum quality and on dim/bright displays.",
+        "Avoids making critical information depend only on hue or bloom."
+      ]
+    },
+    {
+      "id": "competitive-fps-performance",
+      "mode": "AUDIT_OR_OPTIMIZE",
+      "prompt": "Audit and optimize the lighting for a competitive Roblox FPS. We have many shadowed PointLights in an industrial map, frame drops on mobile, and players complain that opponents disappear in doorways.",
+      "expected_output": "An evidence-led audit that preserves competitive fairness, reduces expensive overlapping/shadowed local lights, distinguishes official facts from heuristics, and defines device/quality tests and profiler gates.",
+      "assertions": [
+        "Prioritizes stable enemy silhouettes and doorway adaptation over cinematic darkness.",
+        "Audits light range, overlap, shadow use, activation, CastShadow, geometry, post effects, and quality behavior.",
+        "Recommends measurement with Studio profiling/device tools instead of asserting a universal light-count budget.",
+        "Creates explicit low, medium, and high quality behavior.",
+        "Preserves art direction through practical fixtures, baked-looking emissive cues, and selective hero lights."
+      ]
+    },
+    {
+      "id": "legacy-settings-migration",
+      "mode": "IMPROVE_OR_DEBUG",
+      "prompt": "This old tutorial tells me to set Lighting.Technology to Future and tweak Outlines. Update my place to the modern Roblox lighting system and explain what is deprecated.",
+      "expected_output": "A current-API migration that flags deprecated or legacy properties, uses current LightingStyle and supported controls where appropriate, and avoids inventing writable behavior for restricted rollout properties.",
+      "assertions": [
+        "Flags Technology and Outlines as legacy/deprecated rather than blindly scripting them.",
+        "Checks current official Roblox documentation before making time-sensitive API claims when web access exists.",
+        "Explains visual intent and maps it to current supported properties/instances.",
+        "Provides a safe backup and staged comparison workflow.",
+        "Does not promise one-to-one visual parity across renderer changes."
+      ]
+    },
+    {
+      "id": "camera-material-confounder",
+      "mode": "MATCH_SCREENSHOT",
+      "prompt": "My render is much brighter and shinier than the reference even though ClockTime, Brightness, and Atmosphere match. Make the lighting match from these two screenshots.",
+      "files": [
+        "reference.png",
+        "candidate.png"
+      ],
+      "expected_output": "A diagnosis that checks camera/FOV/exposure, sky cubemap, environment specular response, SurfaceAppearance/MaterialVariant data, geometry normals, and post-processing before compensating with arbitrary global lighting changes.",
+      "assertions": [
+        "Does not assume the difference is only Lighting service values.",
+        "Compares camera and silhouette alignment before pixel/color metrics.",
+        "Checks PBR roughness/metalness and EnvironmentSpecularScale.",
+        "Masks or excludes UI and unrelated scene differences from comparison.",
+        "Changes one dependency family at a time and records the result."
+      ]
+    },
+    {
+      "id": "plan-and-code-without-studio",
+      "mode": "FROM_SCRATCH",
+      "prompt": "Design realistic rainy-night lighting for my Roblox city. You cannot access Studio, but give me everything needed to implement it safely.",
+      "expected_output": "A valid plan, generated Studio-ready Luau, manual placement instructions for semantic local-light targets, rollback script, assumptions, and a visual/device validation checklist.",
+      "assertions": [
+        "Proceeds without asking for Studio access.",
+        "Creates a non-destructive implementation plan with a unique plan ID.",
+        "Separates global Lighting objects from Camera-local effects.",
+        "Includes warnings for unresolved target paths and external assets.",
+        "Explains what could not be visually verified without running the place."
+      ]
+    },
+    {
+      "id": "direct-studio-nondestructive",
+      "mode": "IMPROVE_OR_DEBUG",
+      "prompt": "You have Studio access. Copy this bright stylized simulator screenshot into my open place and replace the existing lighting setup, but make it reversible.",
+      "files": [
+        "target.png"
+      ],
+      "expected_output": "A pre-edit audit, backup, explicit conflict-replacement decision, tagged managed instances, staged implementation, comparison captures, quality/gameplay validation, and tested rollback.",
+      "assertions": [
+        "Audits current Lighting, Terrain Clouds, post effects, local lights, runtime scripts, and camera effects before editing.",
+        "Backs up affected state and preserves a restoration path before replacement.",
+        "Does not delete unrelated content without recording and backing it up.",
+        "Captures matched-camera before/after images and documents residual differences.",
+        "Tests rollback in the working session or clearly reports if the capability is unavailable."
+      ]
+    },
+    {
+      "id": "cinematic-vs-gameplay-adaptation",
+      "mode": "MATCH_SCREENSHOT",
+      "prompt": "Copy the lighting from this cinematic showcase screenshot into a fast obby. Keep the same mood, but gameplay readability matters more than exact pixels.",
+      "files": [
+        "cinematic-reference.png"
+      ],
+      "expected_output": "A style-transfer interpretation that identifies which visible traits can be preserved and which cinematic effects must be reduced or localized for motion, navigation, and low-quality resilience.",
+      "assertions": [
+        "Labels the objective as gameplay adaptation rather than exact pixel matching.",
+        "Preserves palette, sun/sky relationship, atmospheric depth, and focal rhythm where feasible.",
+        "Reduces or gates blur, depth of field, extreme bloom, crushed blacks, and distracting SunRays.",
+        "Tests jumps, hazards, moving camera, checkpoints, and failure/retry loops.",
+        "Documents intentional deviations from the reference and why they improve play."
+      ]
+    }
+  ]
+}

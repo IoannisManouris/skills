@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "mode": "MATCH_SCREENSHOT",
+  "sources": [
+    {
+      "source_id": "primary-frame",
+      "file": "reference-neon-alley.png",
+      "url": null,
+      "source_type": "user_screenshot",
+      "experience_identity_confidence": 1.0,
+      "raw_gameplay_confidence": 0.7,
+      "capture_or_publish_date": null,
+      "map_cluster": "alley",
+      "lighting_cluster": "night-neon",
+      "similarity_to_primary": 1.0,
+      "included": true,
+      "notes": [
+        "Single frame; no metadata or alternate angle.",
+        "Could contain platform capture or external color grading."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "O-camera-1",
+      "category": "camera",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Vertical architecture edges remain nearly parallel.",
+        "Foreground fixtures have moderate perspective expansion rather than an ultra-wide stretch."
+      ],
+      "inference": "Use a normal-to-moderately-wide gameplay FOV hypothesis before tuning lighting.",
+      "roblox_targets": ["Camera.FieldOfView", "camera pose"],
+      "estimate": {"field_of_view_degrees": {"min": 65, "max": 78, "preferred": 72}},
+      "confidence": 0.62,
+      "alternatives": ["Screenshot may be cropped from a wider original."],
+      "confounders": ["Unknown resolution and crop", "unknown camera aspect ratio"],
+      "next_view": "An uncropped frame from the same camera path."
+    },
+    {
+      "id": "O-global-1",
+      "category": "global_light",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Unlit upper walls remain cool and dim.",
+        "No strong parallel outdoor cast shadows are visible."
+      ],
+      "inference": "Use weak cool environment fill and let motivated local fixtures define the scene.",
+      "roblox_targets": ["Lighting.Ambient", "Lighting.OutdoorAmbient", "Lighting.EnvironmentDiffuseScale", "Lighting.Brightness"],
+      "estimate": {
+        "EnvironmentDiffuseScale": {"min": 0.15, "max": 0.4},
+        "Brightness": {"min": 0.8, "max": 1.5}
+      },
+      "confidence": 0.66,
+      "alternatives": ["A moon key may exist outside the frame."],
+      "confounders": ["Dark base-color textures can imitate weak fill."],
+      "next_view": "A wider exterior view showing rooflines and open sky."
+    },
+    {
+      "id": "O-shadow-1",
+      "category": "shadows",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Occlusion around crates is readable but edge direction changes near different fixtures.",
+        "No single dominant sun-shadow vector explains the frame."
+      ],
+      "inference": "Local lights dominate shadow structure; global shadow softness is secondary.",
+      "roblox_targets": ["Lighting.GlobalShadows", "Lighting.ShadowSoftness", "Light.Shadows"],
+      "estimate": {"ShadowSoftness": {"min": 0.35, "max": 0.7}},
+      "confidence": 0.58,
+      "alternatives": ["Some apparent shadows may be baked into textures."],
+      "confounders": ["Screenshot compression", "unknown mesh normals"],
+      "next_view": "A moving frame showing whether shadow edges respond to characters."
+    },
+    {
+      "id": "O-exposure-1",
+      "category": "exposure_tone",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Neon cores approach white but retain some hue.",
+        "Dark wall detail remains visible without lifting the whole frame."
+      ],
+      "inference": "Use slightly negative exposure with moderate contrast; avoid crushing shadows through global contrast alone.",
+      "roblox_targets": ["Lighting.ExposureCompensation", "ColorCorrectionEffect.Contrast", "ColorCorrectionEffect.Brightness"],
+      "estimate": {
+        "ExposureCompensation": {"min": -0.55, "max": -0.15},
+        "Contrast": {"min": 0.05, "max": 0.16}
+      },
+      "confidence": 0.7,
+      "alternatives": ["The image may have been tone-mapped outside Roblox."],
+      "confounders": ["Display gamma", "capture compression"],
+      "next_view": "A raw in-client capture with a neutral gray object in frame."
+    },
+    {
+      "id": "O-sky-1",
+      "category": "sky_clouds",
+      "source_ids": ["primary-frame"],
+      "evidence": ["Only a narrow dark-blue sky strip is visible; no cloud silhouette is readable."],
+      "inference": "Use a dark compatible sky and leave dynamic Clouds disabled until stronger evidence exists.",
+      "roblox_targets": ["Sky", "Clouds", "Lighting.ClockTime"],
+      "estimate": {"ClockTime": {"min": 0, "max": 4}},
+      "confidence": 0.43,
+      "alternatives": ["The sky strip may be a backdrop mesh rather than a Sky."],
+      "confounders": ["Tiny visible region", "unknown weather state"],
+      "next_view": "An upward-looking frame from the same map."
+    },
+    {
+      "id": "O-atmosphere-1",
+      "category": "atmosphere_fog",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Far end of alley loses contrast and shifts cool blue.",
+        "Foreground remains comparatively clear."
+      ],
+      "inference": "Use moderate cool Atmosphere density/haze to separate depth without fogging the near route.",
+      "roblox_targets": ["Atmosphere.Density", "Atmosphere.Haze", "Atmosphere.Color", "Atmosphere.Offset"],
+      "estimate": {
+        "Density": {"min": 0.15, "max": 0.3},
+        "Haze": {"min": 1.0, "max": 2.4},
+        "Offset": {"min": -0.05, "max": 0.1}
+      },
+      "confidence": 0.64,
+      "alternatives": ["Depth loss may come from a translucent fog plane or post effect."],
+      "confounders": ["Unknown map distance", "unknown texture contrast"],
+      "next_view": "A side view with known-distance repeated objects."
+    },
+    {
+      "id": "O-local-1",
+      "category": "local_lights",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Cyan spill is strongest near a wall sign and decays across adjacent floor surfaces.",
+        "Magenta spill is broad and directional near a panel on the opposite wall."
+      ],
+      "inference": "Use a cyan PointLight or small SurfaceLight plus a broad magenta SurfaceLight attached to visible fixtures.",
+      "roblox_targets": ["PointLight", "SurfaceLight", "Attachment"],
+      "estimate": {
+        "cyan_range_studs": {"min": 14, "max": 24},
+        "magenta_range_studs": {"min": 18, "max": 30}
+      },
+      "confidence": 0.77,
+      "alternatives": ["The cyan source could be two lower-range lights rather than one."],
+      "confounders": ["Unknown world scale", "unknown material albedo"],
+      "next_view": "A frame showing the fixture and receiving floor in one unobstructed view."
+    },
+    {
+      "id": "O-bloom-1",
+      "category": "emissive_bloom",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Bright sign strokes produce a soft halo beyond their geometry.",
+        "Nearby walls also show colored spill, so bloom alone cannot explain the effect."
+      ],
+      "inference": "Combine Neon/emissive-looking source geometry, real local light spill, and thresholded moderate bloom.",
+      "roblox_targets": ["BloomEffect", "Enum.Material.Neon", "PointLight", "SurfaceLight"],
+      "estimate": {
+        "BloomIntensity": {"min": 0.2, "max": 0.5},
+        "BloomThreshold": {"min": 0.65, "max": 1.1}
+      },
+      "confidence": 0.8,
+      "alternatives": ["A custom glow texture may contribute to the halo."],
+      "confounders": ["Image resizing can create false halos."],
+      "next_view": "A native-resolution crop of the sign edge."
+    },
+    {
+      "id": "O-reflection-1",
+      "category": "reflections",
+      "source_ids": ["primary-frame"],
+      "evidence": ["Wet-looking floor carries elongated colored highlights but rough walls do not."],
+      "inference": "Material roughness/normal response is essential; use high environment specular only after matching floor material maps.",
+      "roblox_targets": ["SurfaceAppearance.RoughnessMap", "SurfaceAppearance.MetalnessMap", "Lighting.EnvironmentSpecularScale"],
+      "estimate": {"EnvironmentSpecularScale": {"min": 0.65, "max": 1.0}},
+      "confidence": 0.68,
+      "alternatives": ["Highlights may be painted into the floor texture."],
+      "confounders": ["Unknown PBR maps", "unknown floor geometry"],
+      "next_view": "A camera move across the floor to see whether highlights parallax."
+    },
+    {
+      "id": "O-post-1",
+      "category": "post_processing",
+      "source_ids": ["primary-frame"],
+      "evidence": [
+        "Overall shadows lean blue while local accents remain saturated.",
+        "No obvious gameplay-wide depth blur is visible."
+      ],
+      "inference": "Use a restrained cool tint and saturation lift; do not add global depth of field.",
+      "roblox_targets": ["ColorCorrectionEffect", "ColorGradingEffect"],
+      "estimate": {
+        "TintColor": [222, 232, 255],
+        "Saturation": {"min": 0.02, "max": 0.12}
+      },
+      "confidence": 0.61,
+      "alternatives": ["The cast may come mainly from sky/environment fill."],
+      "confounders": ["External grade", "base-color palette"],
+      "next_view": "A neutral indoor object lit only by ambient fill."
+    },
+    {
+      "id": "O-gameplay-1",
+      "category": "gameplay_readability",
+      "source_ids": ["primary-frame"],
+      "evidence": ["The central walkable strip is brighter than side recesses and exits converge toward a cool focal patch."],
+      "inference": "Preserve route value contrast and keep interactables readable without relying on bloom color alone.",
+      "roblox_targets": ["local light placement", "Highlight fallback", "quality tiers"],
+      "estimate": null,
+      "confidence": 0.74,
+      "alternatives": ["The screenshot may be staged rather than representative gameplay."],
+      "confounders": ["No UI or player avatar visible"],
+      "next_view": "A normal gameplay frame with avatar, UI, hazards, and interactables."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "summary": "Cool low global fill, moderate blue atmosphere, cyan/magenta motivated local fixtures, wet PBR floor, restrained thresholded bloom.",
+      "confidence": 0.68,
+      "explains": [
+        "localized colored spill",
+        "cool depth falloff",
+        "retained dark detail",
+        "wet-floor highlights",
+        "neon halos"
+      ],
+      "assumptions": [
+        "The screenshot is close to raw gameplay output.",
+        "Floor highlights are materially responsive rather than painted."
+      ],
+      "roblox_feasibility": 0.9,
+      "gameplay_fit": 0.82,
+      "performance_risk": "medium",
+      "rejected_if": ["Additional frames show static painted light pools with no parallax or character shadow response."]
+    },
+    {
+      "id": "H2",
+      "summary": "Flatter ambient scene with much of the neon look baked into textures and a stronger external color grade.",
+      "confidence": 0.38,
+      "explains": ["stable-looking wall color", "possible nonphysical floor streaks"],
+      "assumptions": ["The image is promotional or externally graded."],
+      "roblox_feasibility": 0.72,
+      "gameplay_fit": 0.7,
+      "performance_risk": "low",
+      "rejected_if": ["Video shows dynamic light spill and moving shadows from the fixtures."]
+    }
+  ],
+  "preferred_hypothesis_id": "H1",
+  "limitations": [
+    "One image cannot identify exact Roblox properties, hidden lights, camera exposure, or runtime quality level.",
+    "World scale, material maps, sky assets, camera FOV/crop, and external editing are unknown.",
+    "The reference may use baked textures, custom meshes, or effects not reproducible exactly with Roblox built-ins."
+  ],
+  "requested_additional_views": [
+    {
+      "view": "Raw gameplay frame from the same alley looking back toward the camera",
+      "information_gain": "Disambiguates fixture placement, falloff, atmosphere depth, and whether effects are view-dependent.",
+      "priority": 1
+    },
+    {
+      "view": "Upward frame showing sky and roofline",
+      "information_gain": "Constrains sky, clouds, moon/global key, and outdoor fill.",
+      "priority": 2
+    }
+  ]
+}

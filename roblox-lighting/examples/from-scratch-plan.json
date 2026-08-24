@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "plan_id": "forest-rpg-from-scratch",
+  "generated_at": "2026-08-24T00:34:42+00:00",
+  "mode": "FROM_SCRATCH",
+  "intent": {
+    "thesis": "Starting hypothesis for adventure_rpg: named biome profiles with persistent landmark and combat readability",
+    "genre": "adventure_rpg",
+    "mood": [
+      "adventurous",
+      "warm"
+    ],
+    "target_state": "golden-hour forest traversal",
+    "camera_use": "third-person gameplay",
+    "minimum_platform": "low-end mobile"
+  },
+  "sources": [],
+  "assumptions": [
+    "Values are profile midpoints, not final calibrated settings.",
+    "The map, camera, material response, and gameplay routes still require visual audit."
+  ],
+  "confidence": 0.45,
+  "lighting": {
+    "properties": {
+      "Ambient": [
+        65,
+        68,
+        76
+      ],
+      "Brightness": 2.0,
+      "ClockTime": 12.5,
+      "ColorShift_Bottom": [
+        0,
+        0,
+        0
+      ],
+      "ColorShift_Top": [
+        0,
+        0,
+        0
+      ],
+      "EnvironmentDiffuseScale": 0.7,
+      "EnvironmentSpecularScale": 0.7,
+      "ExposureCompensation": -0.05,
+      "GeographicLatitude": 41.0,
+      "GlobalShadows": true,
+      "LightingStyle": "Realistic",
+      "OutdoorAmbient": [
+        125,
+        128,
+        138
+      ],
+      "PrioritizeLightingQuality": true,
+      "ShadowSoftness": 0.5
+    },
+    "manual_properties": {},
+    "sky": {
+      "enabled": true,
+      "name": "RobloxLightingSky",
+      "properties": {
+        "CelestialBodiesShown": true,
+        "StarCount": 3000,
+        "SunAngularSize": 21,
+        "MoonAngularSize": 11
+      }
+    },
+    "atmosphere": {
+      "enabled": true,
+      "name": "RobloxLightingAtmosphere",
+      "properties": {
+        "Color": [
+          199,
+          199,
+          199
+        ],
+        "Decay": [
+          106,
+          112,
+          125
+        ],
+        "Density": 0.25,
+        "Glare": 0.0,
+        "Haze": 1.0,
+        "Offset": 0.0
+      }
+    },
+    "legacy_fog": {
+      "enabled": false
+    },
+    "clouds": null,
+    "post_effects": [
+      {
+        "class": "ColorGradingEffect",
+        "name": "RobloxLightingToneMapper",
+        "parent": "Lighting",
+        "enabled": true,
+        "properties": {
+          "TonemapperPreset": "Default"
+        },
+        "quality_tiers": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "rationale": "Keep one explicit tone-mapper authority."
+      },
+      {
+        "class": "ColorCorrectionEffect",
+        "name": "RobloxLightingGrade",
+        "parent": "Lighting",
+        "enabled": true,
+        "properties": {
+          "Brightness": 0.0,
+          "Contrast": 0.02,
+          "Saturation": 0.0,
+          "TintColor": [
+            255,
+            255,
+            255
+          ]
+        },
+        "quality_tiers": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "rationale": "Near-neutral starting grade; solve illumination first."
+      },
+      {
+        "class": "BloomEffect",
+        "name": "RobloxLightingBloom",
+        "parent": "Lighting",
+        "enabled": true,
+        "properties": {
+          "Intensity": 0.12,
+          "Size": 18,
+          "Threshold": 1.1
+        },
+        "quality_tiers": [
+          "medium",
+          "high"
+        ],
+        "rationale": "Restrained highlight spread; tune threshold before intensity."
+      }
+    ]
+  },
+  "local_lights": [],
+  "material_geometry_actions": [
+    {
+      "target": "Map-wide",
+      "action": "Audit wall thickness, gaps, normals, CastShadow, albedo, roughness, and metalness before compensating with lighting.",
+      "reason": "Geometry/material errors can imitate lighting errors.",
+      "priority": "required"
+    }
+  ],
+  "runtime_profiles": [],
+  "quality_tiers": {
+    "low": {
+      "goal": "Preserve route, hazard, avatar, and interactable readability with minimal optional effects.",
+      "enabled_light_ids": [],
+      "enabled_post_effects": [
+        "RobloxLightingToneMapper",
+        "RobloxLightingGrade"
+      ],
+      "notes": [
+        "Do not depend on dynamic shadows or bloom for gameplay information."
+      ]
+    },
+    "medium": {
+      "goal": "Preserve the intended mood with restrained effects and selected local lights.",
+      "enabled_light_ids": [],
+      "enabled_post_effects": [
+        "RobloxLightingToneMapper",
+        "RobloxLightingGrade",
+        "RobloxLightingBloom"
+      ],
+      "notes": [
+        "Profile the densest camera view."
+      ]
+    },
+    "high": {
+      "goal": "Full approved art direction without sacrificing gameplay clarity.",
+      "enabled_light_ids": [],
+      "enabled_post_effects": [
+        "RobloxLightingToneMapper",
+        "RobloxLightingGrade",
+        "RobloxLightingBloom"
+      ],
+      "notes": [
+        "Validate specular response, shadow quality, and atmosphere at native resolution."
+      ]
+    }
+  },
+  "validation": {
+    "views": [
+      {
+        "id": "spawn",
+        "purpose": "first-impression hierarchy and adaptation"
+      },
+      {
+        "id": "critical-route",
+        "purpose": "route, hazard, enemy, and interactable readability"
+      },
+      {
+        "id": "worst-performance",
+        "purpose": "maximum overlapping lights/shadows/effects"
+      }
+    ],
+    "image_metrics": [
+      "regional luma percentiles",
+      "clipped black/white fraction",
+      "shadow-direction agreement"
+    ],
+    "gameplay_gates": [
+      "Primary route is readable within two seconds.",
+      "Critical hazards and interactables remain distinguishable on low quality.",
+      "No required information depends only on color, bloom, or dynamic shadows."
+    ],
+    "performance_gates": [
+      "Profile representative low, medium, and high graphics conditions.",
+      "No avoidable dense overlap of large shadow-casting local lights."
+    ],
+    "stopping_criteria": [
+      "All gameplay and performance gates pass.",
+      "Two consecutive fine adjustments produce no meaningful perceptual improvement."
+    ]
+  },
+  "unresolved_ambiguities": []
+}

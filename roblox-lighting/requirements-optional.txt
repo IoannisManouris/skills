@@ -1,0 +1,3 @@
+# Core validation, plan generation, and Roblox research helpers use Python's standard library.
+# Install this only for image diagnostics and screenshot clustering:
+Pillow>=10.0
