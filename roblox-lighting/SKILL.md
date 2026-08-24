@@ -3,13 +3,12 @@ name: roblox-lighting
 description: >-
   Use this skill whenever a user wants to create, improve, audit, debug, optimize, script, or reproduce Roblox scene lighting/illumination—often misspelled "lightning"—including the Lighting service, Atmosphere, Sky, Clouds, shadows, PointLight, SpotLight, SurfaceLight, PBR response, fog, post-processing, day/night looks, genre or map art direction, player readability, and mobile performance. Also use it to match another game's lighting from one or more screenshots. When a Roblox experience link is supplied, research its public gameplay media and find visually consistent references before estimating settings. Do not use it for electrical lightning-bolt VFX unless scene illumination is also requested.
 license: MIT
-compatibility: >-
-  Portable Agent Skills specification. Works best with image vision, web/image search, filesystem access, and Python 3.10+. Pillow is optional. Roblox Studio access, a Studio plugin, or a Studio MCP improves direct implementation; otherwise produce a validated plan and Studio-ready Luau.
 metadata:
   author: IoannisManouris
   version: "1.0.0"
   last-verified: "2026-08-24"
   domain: roblox-scene-lighting
+  compatibility: "Portable Agent Skills specification. Works best with image vision, web/image search, filesystem access, and Python 3.10+. Pillow is optional. Roblox Studio access, a Studio plugin, or a Studio MCP improves direct implementation; otherwise produce a validated plan and Studio-ready Luau."
 ---
 
 # Roblox Lighting Director

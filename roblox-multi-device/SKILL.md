@@ -1,13 +1,13 @@
 ---
 name: roblox-multi-device
 description: Use this skill when implementing, auditing, refactoring, or debugging Roblox controls and UI across keyboard/mouse, touch/mobile/tablet, gamepad/console/TV, or VR. It creates a semantic Input Action System architecture, device-aware prompts, hot-swapping, analog movement/camera/aim, touch layouts, gamepad/TV focus navigation, VR locomotion/interactions, safe-area responsive UI, accessibility, and a cross-device test plan. Trigger when the user asks to make a Roblox experience work on every device or mentions input actions, bindings, controller support, mobile controls, console UI, ten-foot UI, or VR controls.
-compatibility: Agent Skills-compatible coding agents with access to a Roblox project. Web access is recommended to verify current Roblox APIs; Roblox Studio is needed for emulator and physical-device testing.
 metadata:
   display_name: Roblox Multi-Device
   version: "1.0.0"
   domain: roblox-input-ui
   target_engine: Roblox Studio
   last_verified: "2026-07-12"
+  compatibility: Agent Skills-compatible coding agents with access to a Roblox project. Web access is recommended to verify current Roblox APIs; Roblox Studio is needed for emulator and physical-device testing.
 ---
 
 # Roblox Multi-Device

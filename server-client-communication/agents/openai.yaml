@@ -1,0 +1,6 @@
+interface:
+  display_name: "Server-Client Communication"
+  short_description: "Design secure Roblox networking boundaries"
+  default_prompt: "Use $server-client-communication to audit this Roblox system, assign server and client ownership, define the remote contract, and implement validated networking."
+policy:
+  allow_implicit_invocation: true

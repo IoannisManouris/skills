@@ -1,11 +1,11 @@
 ---
 name: roblox-luau-optimization
 description: Use this skill when the user asks to optimize, profile, refactor, or audit Roblox/Luau code for performance, including FPS, server CPU, memory leaks, garbage collection, RemoteEvents/RemoteFunctions, UnreliableRemoteEvents, buffers, Parallel Luau, Actors, native code generation, RunService loops, physics, replication, instance count, streaming, UI, or load time. First verify current Roblox/Luau guidance from official web sources before changing code.
-compatibility: Designed for Codex, Claude Code, and Agent Skills-compatible coding agents with file editing and optional web access.
 metadata:
   version: "1.2.1"
   domain: roblox-luau
   target_engine: Roblox Studio
+  compatibility: Designed for Codex, Claude Code, and Agent Skills-compatible coding agents with file editing and optional web access.
 ---
 
 # Roblox Luau Performance Optimization Skill

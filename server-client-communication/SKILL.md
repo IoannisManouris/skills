@@ -1,11 +1,11 @@
 ---
 name: server-client-communication
 description: Use this skill when designing, auditing, refactoring, or coding Roblox server-client communication, RemoteEvents, RemoteFunctions, UnreliableRemoteEvents, client/server responsibility splits, server authority, replication, network ownership, hit validation, UI/VFX/client prediction, or when moving game systems into the correct server or client layer.
-compatibility: Agent Skills-compatible coding agents. Optimized for Roblox Luau projects, but includes general multiplayer networking principles.
 metadata:
   display_name: Server-Client Communication
   version: "1.0.0"
   domain: roblox-networking
+  compatibility: Agent Skills-compatible coding agents. Optimized for Roblox Luau projects, but includes general multiplayer networking principles.
 ---
 
 # Server-Client Communication Skill

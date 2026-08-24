@@ -1,0 +1,6 @@
+interface:
+  display_name: "Game Reference Research"
+  short_description: "Analyze games as evidence-backed references"
+  default_prompt: "Use $game-reference-research to analyze this game as a reference, separate evidence from inference, and report the most useful design and technical lessons."
+policy:
+  allow_implicit_invocation: true
