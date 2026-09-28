@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reviewed asset acquisition evidence",
+  "type": "object",
+  "properties": {
+    "asset_page": {
+      "type": "string",
+      "format": "uri"
+    },
+    "creator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "enum": [
+        "CC0-1.0",
+        "Public-Domain"
+      ]
+    },
+    "license_evidence_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "download_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_complete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "asset_page",
+    "creator",
+    "license",
+    "license_evidence_url",
+    "verified_at",
+    "download_url",
+    "reviewer",
+    "review_notes",
+    "review_complete"
+  ],
+  "additionalProperties": false
+}

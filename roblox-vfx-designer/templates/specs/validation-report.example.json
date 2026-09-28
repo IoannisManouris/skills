@@ -1,0 +1,23 @@
+{
+  "example_only": true,
+  "effect": "GroundedImpactExample",
+  "environment": {
+    "place": null,
+    "studio_id": null,
+    "device": null,
+    "quality": null
+  },
+  "checks": {
+    "static_spec": "not_run",
+    "studio_runtime": "not_run",
+    "visual_style": "not_run",
+    "asset_permissions": "not_run",
+    "mobile_performance": "not_run",
+    "multiplayer": "not_run"
+  },
+  "captures": [],
+  "metrics": {},
+  "blockers": [
+    "Example report: fill only with operations that actually occurred."
+  ]
+}

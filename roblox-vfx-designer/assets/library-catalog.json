@@ -1,0 +1,250 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-09-28",
+  "default_license_policy": "CC0-1.0 or verified public domain; asset-level review required before download/import",
+  "network_notes": "Pages checked by web research. Binary transfer from build environment unavailable. No promise of uptime or future endpoint compatibility.",
+  "libraries": [
+    {
+      "id": "kenney-particle-pack",
+      "title": "Particle Pack",
+      "creator": "Kenney",
+      "page_url": "https://kenney.nl/assets/particle-pack",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://kenney.nl/assets/particle-pack",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "spark",
+        "flare",
+        "smoke",
+        "basic masks"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": "80 sprites advertised. Original creator mirror is separately listed. Inspect actual alpha; a black-background mask may need deliberate conversion."
+    },
+    {
+      "id": "kenney-smoke-particles",
+      "title": "Smoke Particles",
+      "creator": "Kenney",
+      "page_url": "https://kenney.nl/assets/smoke-particles",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://kenney.nl/assets/smoke-particles",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "cartoon smoke",
+        "dust",
+        "puffs"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": ""
+    },
+    {
+      "id": "kenney-splat-pack",
+      "title": "Splat Pack",
+      "creator": "Kenney",
+      "page_url": "https://kenney.nl/assets/splat-pack",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://kenney.nl/assets/splat-pack",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "ink",
+        "splashes",
+        "stylized impacts"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": ""
+    },
+    {
+      "id": "kenney-light-masks",
+      "title": "Light Masks",
+      "creator": "Kenney",
+      "page_url": "https://kenney.nl/assets/light-masks",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://kenney.nl/assets/light-masks",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "light mask",
+        "radial shape",
+        "flare"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": "A downloadable mask is art data, not a Roblox light-cookie API. Adapt to sprites/beams/meshes as appropriate."
+    },
+    {
+      "id": "kenney-particle-oga",
+      "title": "Particle Pack (80+ sprites), creator mirror",
+      "creator": "Kenney",
+      "page_url": "https://opengameart.org/content/particle-pack-80-sprites",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://opengameart.org/content/particle-pack-80-sprites",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "spark",
+        "flare",
+        "smoke",
+        "basic masks"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": "https://opengameart.org/sites/default/files/kenney_particlePack.zip",
+        "binary_download_verified": false
+      },
+      "notes": "Author-posted mirror. Archive link discovered on page; bytes not retrieved during build. Ignore embedded Unity packages/scripts."
+    },
+    {
+      "id": "oga-smoke-aura",
+      "title": "Smoke Aura",
+      "creator": "Beast",
+      "page_url": "https://opengameart.org/content/smoke-aura",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://opengameart.org/content/smoke-aura",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "looping aura",
+        "smoke flipbook",
+        "dark magic"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": "Several frame-count variants; repack to a supported Roblox grid and verify frame order. Do not auto-execute Blender source."
+    },
+    {
+      "id": "oga-smoke-sheet",
+      "title": "Smoke Sprite Sheet",
+      "creator": "ohyhei",
+      "page_url": "https://opengameart.org/content/smoke-sprite-sheet",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://opengameart.org/content/smoke-sprite-sheet",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "smoke flipbook"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": "Page lists CC0. Verify downloaded atlas dimensions and order instead of inferring from thumbnail."
+    },
+    {
+      "id": "oga-vapor",
+      "title": "Smoke Vapor Particles",
+      "creator": "Fupi",
+      "page_url": "https://opengameart.org/content/smoke-vapor-particles",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://opengameart.org/content/smoke-vapor-particles",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "white smoke",
+        "dust",
+        "vapor"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": "https://opengameart.org/sites/default/files/smoke1.png",
+        "binary_download_verified": false
+      },
+      "notes": "One of four linked textures. Direct image opened in web; no binary bundled. Actual alpha must be inspected locally."
+    },
+    {
+      "id": "oga-more-explosions",
+      "title": "More Explosions",
+      "creator": "StumpyStrust",
+      "page_url": "https://opengameart.org/content/more-explosions",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://opengameart.org/content/more-explosions",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "explosion flipbook",
+        "fire burst"
+      ],
+      "access": {
+        "adapter": "html",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": "Creator-posted CC0 archive. Preview does not establish every frame or alpha characteristic."
+    },
+    {
+      "id": "poly-haven",
+      "title": "Poly Haven asset library",
+      "creator": "Per-asset creators",
+      "page_url": "https://polyhaven.com/",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://polyhaven.com/license",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "PBR surfaces",
+        "debris material",
+        "naturalistic reference"
+      ],
+      "access": {
+        "adapter": "polyhaven",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": "Surface maps/HDRIs/models, not primarily ready-made alpha particles. API terms separate from CC0: identify your User-Agent and credit Poly Haven when using the live API. Current API free including commercial; recheck at use."
+    },
+    {
+      "id": "ambientcg",
+      "title": "ambientCG asset library",
+      "creator": "Per-asset creator metadata",
+      "page_url": "https://ambientcg.com/",
+      "license": "CC0-1.0",
+      "license_evidence_url": "https://docs.ambientcg.com/license/",
+      "checked_at": "2026-09-28",
+      "license_scope": "asset or pack, not arbitrary website graphics",
+      "roles": [
+        "PBR surfaces",
+        "decals",
+        "atlases",
+        "debris material"
+      ],
+      "access": {
+        "adapter": "ambientcg",
+        "authentication": "none for documented public access",
+        "direct_download_url": null,
+        "binary_download_verified": false
+      },
+      "notes": "Use official v3 API documentation; select the asset type/format deliberately. No assumption that a PBR albedo map is a ready particle mask."
+    }
+  ]
+}

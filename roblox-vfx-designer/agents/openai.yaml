@@ -1,0 +1,6 @@
+interface:
+  display_name: "Roblox VFX Designer"
+  short_description: "Build style-matched Roblox VFX with licensed textures"
+  default_prompt: "Use $roblox-vfx-designer to build and validate Roblox VFX matching the requested style, scene, or reference."
+policy:
+  allow_implicit_invocation: true

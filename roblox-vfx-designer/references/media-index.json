@@ -1,0 +1,132 @@
+{
+  "checked_at": "2026-09-28",
+  "verification": "Video URLs identified on original publisher pages; no full playback or frame-level analysis performed in build. Use as leads and inspect at task time.",
+  "videos": [
+    {
+      "title": "Riot Art Education — Visual Effects",
+      "url": "https://www.youtube.com/watch?v=3QKK2o5rWSQ",
+      "study_focus": "Gameplay clarity and effect construction",
+      "creator": "Riot Games",
+      "source_page": "https://www.riotgames.com/en/artedu/visual-effects",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Magic Orb",
+      "url": "https://youtu.be/7bMOhNUA1bI",
+      "study_focus": "Core and orbit silhouette",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Portals",
+      "url": "https://youtu.be/V2NZb0WN7SY",
+      "study_focus": "Boundary and inward flow",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Lightning",
+      "url": "https://youtu.be/40m_HUENh3E",
+      "study_focus": "Bolt hierarchy",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Muzzle Flash",
+      "url": "https://youtu.be/sgBbnF3r60U",
+      "study_focus": "Directional contact",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Hits and Impacts",
+      "url": "https://youtu.be/jSIan1cEYTI",
+      "study_focus": "Primary impact read",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Ice Attack",
+      "url": "https://youtu.be/gfOaGvNQ28U",
+      "study_focus": "Crystal growth",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Stylized Fire",
+      "url": "https://youtu.be/iRHPr_-XjCU",
+      "study_focus": "Flame shape rhythm",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Tornado",
+      "url": "https://youtu.be/Qyh9RPxeKcA",
+      "study_focus": "Spiral motion",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Waterfall",
+      "url": "https://youtu.be/yJ0NRr-DdYU",
+      "study_focus": "Flow and contact",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Ground Cracks",
+      "url": "https://youtu.be/qiAiVa0HtyE",
+      "study_focus": "Branching footprint",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Weapon Trails",
+      "url": "https://youtu.be/c8hijUge7IY",
+      "study_focus": "Motion-history silhouette",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Destroy / Explode Objects",
+      "url": "https://youtu.be/w4aMtKeD2w4",
+      "study_focus": "Breakup staging",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    },
+    {
+      "title": "Loot Drop",
+      "url": "https://youtu.be/Qig-g9EzND4",
+      "study_focus": "Reward hierarchy",
+      "creator": "Gabriel Aguiar",
+      "source_page": "https://www.gabrielaguiarprod.com/tutorials",
+      "rights": "reference-only; no texture reuse permission inferred",
+      "engine": "mixed/Unity for Gabriel examples; transfer design not APIs"
+    }
+  ]
+}

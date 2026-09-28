@@ -1,0 +1,87 @@
+{
+  "name": "GroundedImpactExample",
+  "style_mode": "environment",
+  "status": "planned",
+  "style_profile": "style-profile.json",
+  "intent": "A compact non-damaging landing accent; primary read remains visible on low quality.",
+  "timeline_origin": "Effect contact is t=0; this example has no anticipation.",
+  "surface_convention": "Local +Y = contact normal; cosmetic offset 0.025 studs subject to actual scale.",
+  "layers": [
+    {
+      "id": "contact",
+      "primitive": "ParticleEmitter",
+      "role": "primary",
+      "purpose": "Readable localized contact shape",
+      "start_seconds": 0,
+      "active_seconds": 0,
+      "tail_seconds": 0.1,
+      "texture_role": "flash",
+      "parameters": {
+        "BurstCount": 1,
+        "Enabled": false,
+        "Rate": 0
+      },
+      "critical": true
+    },
+    {
+      "id": "dust",
+      "primitive": "ParticleEmitter",
+      "role": "support",
+      "purpose": "Ground material and weight",
+      "start_seconds": 0.025,
+      "active_seconds": 0,
+      "tail_seconds": 0.6,
+      "texture_role": "smoke",
+      "parameters": {
+        "BurstCount": 5,
+        "Enabled": false,
+        "Rate": 0
+      },
+      "critical": false
+    }
+  ],
+  "quality_tiers": {
+    "high": {
+      "disabled_layers": [],
+      "primary_preserved": true,
+      "notes": "Tune total translucent coverage in place."
+    },
+    "low": {
+      "disabled_layers": [
+        "dust"
+      ],
+      "primary_preserved": true,
+      "notes": "Keep contact read; material tail optional."
+    }
+  },
+  "cleanup": {
+    "mode": "finite",
+    "stop_owner": null,
+    "maximum_seconds": 0.7,
+    "cancellation": "both"
+  },
+  "assets": [
+    {
+      "role": "flash",
+      "manifest_path": null,
+      "image_content_id": null,
+      "status": "pending"
+    },
+    {
+      "role": "smoke",
+      "manifest_path": null,
+      "image_content_id": null,
+      "status": "pending"
+    }
+  ],
+  "validation_cases": [
+    "Real gameplay camera and surface",
+    "Cancel before delayed dust",
+    "Repeated play/stop/reuse",
+    "Actual licensed texture rendering",
+    "Low-quality primary read"
+  ],
+  "evidence": [
+    "Illustrative example only: no actual scene inspected, texture imported or runtime validation performed."
+  ]
+}

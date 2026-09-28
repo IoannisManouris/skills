@@ -1,0 +1,43 @@
+{
+  "package": "roblox-vfx-designer",
+  "version": "1.0.0",
+  "executed_at_utc": "2026-09-28T20:16:22.459214+00:00",
+  "overall_static_and_python_status": "passed",
+  "local_unit_test_count": 24,
+  "results": [
+    {
+      "command": "python scripts/validate_package.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"checks\": [\n    \"agent_skill_frontmatter_and_size\",\n    \"codex_metadata\",\n    \"local_markdown_links:26\",\n    \"json_parse_and_finite_values\",\n    \"python_ast_parse\",\n    \"json_schema_definitions_and_examples\",\n    \"effect_plan_semantics\",\n    \"catalog_structure_not_live_download_verification\",\n    \"luau_file_presence_only\"\n  ],\n  \"skill_lines\": 217,\n  \"skill_body_words\": 1457,\n  \"not_tested\": [\n    \"Luau parsing/type-checking\",\n    \"Roblox Studio execution\",\n    \"visual quality\",\n    \"device profiling\",\n    \"live asset transfers\",\n    \"model routing\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m unittest discover -s evals -p test_*.py -v",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_case_collision (test_helpers.AcquisitionTests.test_case_collision) ... ok\ntest_download_manifest_with_mocked_network (test_helpers.AcquisitionTests.test_download_manifest_with_mocked_network) ... ok\ntest_evidence_gate (test_helpers.AcquisitionTests.test_evidence_gate) ... ok\ntest_extract_images_not_code (test_helpers.AcquisitionTests.test_extract_images_not_code) ... ok\ntest_host_and_credentials (test_helpers.AcquisitionTests.test_host_and_credentials) ... ok\ntest_html_download_fails_cleanly (test_helpers.AcquisitionTests.test_html_download_fails_cleanly) ... ok\ntest_html_link_discovery_fixture (test_helpers.AcquisitionTests.test_html_link_discovery_fixture) ... ok\ntest_invalid_image_payload (test_helpers.AcquisitionTests.test_invalid_image_payload) ... ok\ntest_paths (test_helpers.AcquisitionTests.test_paths) ... ok\ntest_private_dns_rejected (test_helpers.AcquisitionTests.test_private_dns_rejected) ... ok\ntest_symlink_rejected (test_helpers.AcquisitionTests.test_symlink_rejected) ... ok\ntest_zip_traversal_before_write (test_helpers.AcquisitionTests.test_zip_traversal_before_write) ... ok\ntest_critical_cannot_be_disabled (test_helpers.PlanTests.test_critical_cannot_be_disabled) ... ok\ntest_duplicate_layer (test_helpers.PlanTests.test_duplicate_layer) ... ok\ntest_good_plan (test_helpers.PlanTests.test_good_plan) ... ok\ntest_no_false_validated_assets (test_helpers.PlanTests.test_no_false_validated_assets) ... ok\ntest_package (test_helpers.PlanTests.test_package) ... ok\ntest_tail_not_truncated (test_helpers.PlanTests.test_tail_not_truncated) ... ok\ntest_unmapped_texture (test_helpers.PlanTests.test_unmapped_texture) ... ok\ntest_atlas_mismatch (test_helpers.TextureTests.test_atlas_mismatch) ... ok\ntest_atlas_order (test_helpers.TextureTests.test_atlas_order) ... ok\ntest_explicit_luminance_and_white (test_helpers.TextureTests.test_explicit_luminance_and_white) ... ok\ntest_preserve_alpha_and_aspect (test_helpers.TextureTests.test_preserve_alpha_and_aspect) ... ok\ntest_save_manifest_no_overwrite (test_helpers.TextureTests.test_save_manifest_no_overwrite) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.037s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/asset_fetch.py list",
+      "exit_code": 0,
+      "stdout": "[\n  {\n    \"id\": \"kenney-particle-pack\",\n    \"title\": \"Particle Pack\",\n    \"roles\": [\n      \"spark\",\n      \"flare\",\n      \"smoke\",\n      \"basic masks\"\n    ],\n    \"page\": \"https://kenney.nl/assets/particle-pack\"\n  },\n  {\n    \"id\": \"kenney-smoke-particles\",\n    \"title\": \"Smoke Particles\",\n    \"roles\": [\n      \"cartoon smoke\",\n      \"dust\",\n      \"puffs\"\n    ],\n    \"page\": \"https://kenney.nl/assets/smoke-particles\"\n  },\n  {\n    \"id\": \"kenney-splat-pack\",\n    \"title\": \"Splat Pack\",\n    \"roles\": [\n      \"ink\",\n      \"splashes\",\n      \"stylized impacts\"\n    ],\n    \"page\": \"https://kenney.nl/assets/splat-pack\"\n  },\n  {\n    \"id\": \"kenney-light-masks\",\n    \"title\": \"Light Masks\",\n    \"roles\": [\n      \"light mask\",\n      \"radial shape\",\n      \"flare\"\n    ],\n    \"page\": \"https://kenney.nl/assets/light-masks\"\n  },\n  {\n    \"id\": \"kenney-particle-oga\",\n    \"title\": \"Particle Pack (80+ sprites), creator mirror\",\n    \"roles\": [\n      \"spark\",\n      \"flare\",\n      \"smoke\",\n      \"basic masks\"\n    ],\n    \"page\": \"https://opengameart.org/content/particle-pack-80-sprites\"\n  },\n  {\n    \"id\": \"oga-smoke-aura\",\n    \"title\": \"Smoke Aura\",\n    \"roles\": [\n      \"looping aura\",\n      \"smoke flipbook\",\n      \"dark magic\"\n    ],\n    \"page\": \"https://opengameart.org/content/smoke-aura\"\n  },\n  {\n    \"id\": \"oga-smoke-sheet\",\n    \"title\": \"Smoke Sprite Sheet\",\n    \"roles\": [\n      \"smoke flipbook\"\n    ],\n    \"page\": \"https://opengameart.org/content/smoke-sprite-sheet\"\n  },\n  {\n    \"id\": \"oga-vapor\",\n    \"title\": \"Smoke Vapor Particles\",\n    \"roles\": [\n      \"white smoke\",\n      \"dust\",\n      \"vapor\"\n    ],\n    \"page\": \"https://opengameart.org/content/smoke-vapor-particles\"\n  },\n  {\n    \"id\": \"oga-more-explosions\",\n    \"title\": \"More Explosions\",\n    \"roles\": [\n      \"explosion flipbook\",\n      \"fire burst\"\n    ],\n    \"page\": \"https://opengameart.org/content/more-explosions\"\n  },\n  {\n    \"id\": \"poly-haven\",\n    \"title\": \"Poly Haven asset library\",\n    \"roles\": [\n      \"PBR surfaces\",\n      \"debris material\",\n      \"naturalistic reference\"\n    ],\n    \"page\": \"https://polyhaven.com/\"\n  },\n  {\n    \"id\": \"ambientcg\",\n    \"title\": \"ambientCG asset library\",\n    \"roles\": [\n      \"PBR surfaces\",\n      \"decals\",\n      \"atlases\",\n      \"debris material\"\n    ],\n    \"page\": \"https://ambientcg.com/\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/prepare_texture.py --help",
+      "exit_code": 0,
+      "stdout": "usage: prepare_texture.py [-h] {normalize,atlas} ...\n\nNormalize RGBA images or pack an explicitly ordered atlas; never upload\nassets.\n\npositional arguments:\n  {normalize,atlas}\n\noptions:\n  -h, --help         show this help message and exit\n",
+      "stderr": ""
+    }
+  ],
+  "not_run": {
+    "luau_parse_typecheck": "No Luau compiler available",
+    "studio_runtime": "No live Roblox Studio connection",
+    "visual_quality": "No actual rendered place/effect capture",
+    "device_performance": "No Roblox device profiling",
+    "model_discovery_benchmark": "Trigger fixtures supplied, not run through actual hosts/models",
+    "live_asset_downloads": "Web source pages verified; build filesystem network transfer unavailable"
+  },
+  "missing_input": "Completed Deep Research report/attachment was not accessible; not incorporated.",
+  "third_party_texture_binaries_bundled": false
+}

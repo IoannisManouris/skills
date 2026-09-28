@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Roblox VFX effect plan",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "style_mode": {
+      "enum": [
+        "description",
+        "environment",
+        "reference",
+        "hybrid"
+      ]
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "implemented_unverified",
+        "validated"
+      ]
+    },
+    "style_profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timeline_origin": {
+      "type": "string",
+      "minLength": 1
+    },
+    "surface_convention": {
+      "type": "string",
+      "minLength": 1
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*$"
+          },
+          "primitive": {
+            "enum": [
+              "ParticleEmitter",
+              "Beam",
+              "Trail",
+              "MeshPart",
+              "Part",
+              "Decal",
+              "Texture",
+              "Highlight",
+              "Light",
+              "Sound",
+              "GUI",
+              "Camera",
+              "PostEffect",
+              "Custom"
+            ]
+          },
+          "role": {
+            "enum": [
+              "primary",
+              "support",
+              "detail",
+              "presentation"
+            ]
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "active_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "tail_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "texture_role": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "parameters": {
+            "type": "object"
+          },
+          "critical": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "primitive",
+          "role",
+          "purpose",
+          "start_seconds",
+          "active_seconds",
+          "tail_seconds",
+          "texture_role",
+          "parameters",
+          "critical"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "quality_tiers": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "disabled_layers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "primary_preserved": {
+            "const": true
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "disabled_layers",
+          "primary_preserved",
+          "notes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "cleanup": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "finite",
+            "explicit_stop_owner"
+          ]
+        },
+        "stop_owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maximum_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cancellation": {
+          "enum": [
+            "hard",
+            "graceful",
+            "both"
+          ]
+        }
+      },
+      "required": [
+        "mode",
+        "stop_owner",
+        "maximum_seconds",
+        "cancellation"
+      ],
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "manifest_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "image_content_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^rbxassetid://[1-9][0-9]*$"
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "licensed_not_imported",
+              "imported_unverified",
+              "verified_in_place"
+            ]
+          }
+        },
+        "required": [
+          "role",
+          "manifest_path",
+          "image_content_id",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "validation_cases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "name",
+    "style_mode",
+    "status",
+    "style_profile",
+    "intent",
+    "timeline_origin",
+    "surface_convention",
+    "layers",
+    "quality_tiers",
+    "cleanup",
+    "assets",
+    "validation_cases",
+    "evidence"
+  ],
+  "additionalProperties": false
+}

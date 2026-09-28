@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "example_only": true,
+  "mode": "hybrid",
+  "sources": {
+    "description": "Restrained grounded landing; no neon",
+    "environment": {
+      "status": "not_inspected",
+      "evidence": []
+    },
+    "reference": {
+      "status": "not_provided",
+      "evidence": []
+    }
+  },
+  "axis_ownership": {
+    "silhouette": "description",
+    "palette": "environment_when_inspected",
+    "timing": "original_proposal"
+  },
+  "profile": {
+    "primary_shape": "compact irregular contact mass",
+    "edges": "mixed sharp contact / soft dust",
+    "palette_roles": {
+      "contact": "muted warm accent, provisional",
+      "dust": "sample material in gameplay view"
+    },
+    "texture_detail": "low-to-medium, provisional",
+    "motion": "fast contact then drag and fade",
+    "scale": "derive from avatar and actual surface",
+    "camera": "unknown until inspected",
+    "lighting": "do not alter global Lighting"
+  },
+  "confidence": "provisional",
+  "avoid": [
+    "generic neon sphere",
+    "micro-particle clutter",
+    "copying unlicensed reference textures"
+  ],
+  "validation_status": "not_run"
+}

@@ -1,0 +1,125 @@
+{
+  "status": "fixtures_only_not_model_benchmarked",
+  "cases": [
+    {
+      "id": "positive-1",
+      "prompt": "Create a Roblox explosion that matches this map.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-2",
+      "prompt": "Make a low-poly shield break in Studio.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-3",
+      "prompt": "Use this video to recreate the spiral effect in my Roblox spell.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-4",
+      "prompt": "The Roblox particles keep emitting after the attack ends; fix them.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-5",
+      "prompt": "Make this attack feel powerful in our Roblox combat system.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-6",
+      "prompt": "Add subtle dust when the Roblox character lands.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-7",
+      "prompt": "Create painterly fire with no anime elements in Roblox.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-8",
+      "prompt": "Build a Roblox beam between these two attachments.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-9",
+      "prompt": "Make the sword slash match our dark industrial place.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-10",
+      "prompt": "Optimize our Roblox magic effects for mobile.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-11",
+      "prompt": "Find CC0 particle textures for this Roblox VFX.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-12",
+      "prompt": "Give this Roblox portal a pixel-art look.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-13",
+      "prompt": "Recreate the reference timing but use our map palette. (Context: open Roblox VFX project.)",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-14",
+      "prompt": "Fix trail streaks when my Roblox dash teleports.",
+      "expected": "invoke"
+    },
+    {
+      "id": "positive-15",
+      "prompt": "Animate the Roblox spell windup, contact and dissolve VFX.",
+      "expected": "invoke"
+    },
+    {
+      "id": "negative-1",
+      "prompt": "Write a Roblox DataStore leaderboard.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "negative-2",
+      "prompt": "Create a 2D video intro in After Effects.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "negative-3",
+      "prompt": "Fix a Rust compile error.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "negative-4",
+      "prompt": "Book a flight.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "negative-5",
+      "prompt": "Animate a Roblox walk cycle; no effects requested.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "negative-6",
+      "prompt": "Create a Vue portfolio website.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "negative-7",
+      "prompt": "Explain the periodic table.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "negative-8",
+      "prompt": "Make a Unity-only shader with no Roblox target.",
+      "expected": "do_not_invoke"
+    },
+    {
+      "id": "context-needed",
+      "prompt": "Make an explosion.",
+      "expected": "inspect_context_then_resolve_target_not_blindly_assume_Roblox"
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "research_date": "2026-09-28",
+  "missing_input": "Completed Deep Research report not accessible; not incorporated.",
+  "sources": [
+    {
+      "id": "skills-spec",
+      "title": "Agent Skills specification",
+      "url": "https://agentskills.io/specification",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "skill format and progressive disclosure",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "codex-skills",
+      "title": "OpenAI skill creation/discovery",
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "install paths and implicit invocation",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "claude-skills",
+      "title": "Claude Code skills",
+      "url": "https://code.claude.com/docs/en/skills",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "host-specific installation",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "skill-practices",
+      "title": "Anthropic skill authoring practices",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "concise instructions and evaluations",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "studio-mcp",
+      "title": "Roblox Studio MCP",
+      "url": "https://create.roblox.com/docs/studio/mcp",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "actual Studio capabilities; schema discovery still required",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "effects",
+      "title": "Roblox effects overview",
+      "url": "https://create.roblox.com/docs/effects",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "primitive families",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "particles-guide",
+      "title": "Particle emitters",
+      "url": "https://create.roblox.com/docs/effects/particle-emitters",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "emission/parenting/art workflow",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "particles-api",
+      "title": "ParticleEmitter API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/ParticleEmitter",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "current public properties and methods",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "beams-guide",
+      "title": "Beams",
+      "url": "https://create.roblox.com/docs/effects/beams",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "ribbons/endpoints/curves",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "beams-api",
+      "title": "Beam API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Beam",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "public controls",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "trails-guide",
+      "title": "Trails",
+      "url": "https://create.roblox.com/docs/effects/trails",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "motion history",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "trails-api",
+      "title": "Trail API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Trail",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "lifetime and clearing",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "attachment",
+      "title": "Attachment API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Attachment",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "local/world anchors",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "bone",
+      "title": "Bone API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Bone",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "animated mesh context",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "highlight",
+      "title": "Highlight API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Highlight",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "silhouette presentation",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "surface",
+      "title": "SurfaceAppearance API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/SurfaceAppearance",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "PBR workflow",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "explosion",
+      "title": "Explosion API",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Explosion",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "gameplay-affecting behavior caution",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "post",
+      "title": "Post-processing",
+      "url": "https://create.roblox.com/docs/environment/post-processing-effects",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "current post-effect family",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "tween",
+      "title": "TweenService",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/TweenService",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "property interpolation",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "track",
+      "title": "AnimationTrack",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/AnimationTrack",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "marker/event lifecycle",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "markers",
+      "title": "Animation events",
+      "url": "https://create.roblox.com/docs/animation/events",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "marker binding",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "raycast",
+      "title": "Raycasting",
+      "url": "https://create.roblox.com/docs/workspace/raycasting",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "surface placement and streaming caveat",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "remotes",
+      "title": "Remote events",
+      "url": "https://create.roblox.com/docs/scripting/events/remote",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "network authority/transport",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "unreliable",
+      "title": "UnreliableRemoteEvent",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/UnreliableRemoteEvent",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "noncritical transport limitations",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "content",
+      "title": "ContentProvider",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/ContentProvider",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "preloading",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "debris",
+      "title": "Debris",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/Debris",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "deferred destruction",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "editable-image",
+      "title": "EditableImage",
+      "url": "https://create.roblox.com/docs/reference/engine/classes/EditableImage",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "capability-dependent image editing",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "performance",
+      "title": "Roblox optimization",
+      "url": "https://create.roblox.com/docs/performance-optimization/improve",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "profiling-directed optimization",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "microprofiler",
+      "title": "MicroProfiler",
+      "url": "https://create.roblox.com/docs/performance-optimization/microprofiler",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "measurement tools",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "asset-upload",
+      "title": "Roblox assets API guide",
+      "url": "https://create.roblox.com/docs/cloud/guides/usage-assets",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "authorized import and ownership",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "riot-vfx",
+      "title": "Riot Art Education VFX",
+      "url": "https://www.riotgames.com/en/artedu/visual-effects",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "primary practitioner hierarchy/clarity",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "riot-clarity",
+      "title": "Clarity in League",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "gameplay visual reference",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "gabriel",
+      "title": "Gabriel Aguiar tutorials",
+      "url": "https://www.gabrielaguiarprod.com/tutorials",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "original publisher video destinations; not playback analysis",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "vfxapprentice",
+      "title": "FX Design Principles course page",
+      "url": "https://www.vfxapprentice.com/courses/fx-design-principles",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "reference discovery; paid lesson content not accessed",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "cc0",
+      "title": "Creative Commons CC0 deed",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "rights scope and caveats",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "poly-api",
+      "title": "Poly Haven API",
+      "url": "https://polyhaven.com/our-api",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "current endpoints, unique User-Agent and provider-credit service terms",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "poly-license",
+      "title": "Poly Haven license",
+      "url": "https://polyhaven.com/license",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "CC0 asset scope",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "ambient-api",
+      "title": "ambientCG v3 assets",
+      "url": "https://docs.ambientcg.com/api/v3/assets/",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "current GET parameters and download metadata",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "ambient-license",
+      "title": "ambientCG license",
+      "url": "https://docs.ambientcg.com/license/",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "CC0 asset scope",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "kenney-particle-pack",
+      "title": "Particle Pack",
+      "url": "https://kenney.nl/assets/particle-pack",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "kenney-smoke-particles",
+      "title": "Smoke Particles",
+      "url": "https://kenney.nl/assets/smoke-particles",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "kenney-splat-pack",
+      "title": "Splat Pack",
+      "url": "https://kenney.nl/assets/splat-pack",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "kenney-light-masks",
+      "title": "Light Masks",
+      "url": "https://kenney.nl/assets/light-masks",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "kenney-particle-oga",
+      "title": "Particle Pack (80+ sprites), creator mirror",
+      "url": "https://opengameart.org/content/particle-pack-80-sprites",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "oga-smoke-aura",
+      "title": "Smoke Aura",
+      "url": "https://opengameart.org/content/smoke-aura",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "oga-smoke-sheet",
+      "title": "Smoke Sprite Sheet",
+      "url": "https://opengameart.org/content/smoke-sprite-sheet",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "oga-vapor",
+      "title": "Smoke Vapor Particles",
+      "url": "https://opengameart.org/content/smoke-vapor-particles",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    },
+    {
+      "id": "oga-more-explosions",
+      "title": "More Explosions",
+      "url": "https://opengameart.org/content/more-explosions",
+      "kind": "primary_documentation_or_original_creator",
+      "checked_at": "2026-09-28",
+      "scope": "asset-level CC0 notice and discovery links; binaries not bundled",
+      "verification": "web page/documentation or original publisher listing; not Roblox runtime certification"
+    }
+  ]
+}
