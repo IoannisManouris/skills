@@ -16,7 +16,9 @@ where appropriate; never fabricate evidence or asset IDs.
 - text_dialogue_requested: false
 - User's text-dialogue request, if any:
 - Existing cutscene / camera / input / UI integration points:
-- Native Animation Editor and publishing UI capability:
+- Chosen authoring route and reason; available Studio/Blender MCP capabilities:
+- Native UI capability, only for operations that need it:
+- User's review/publication policy and authorization reference:
 - Assumptions and unresolved blockers:
 
 ## Shots
@@ -34,14 +36,17 @@ where appropriate; never fabricate evidence or asset IDs.
 Repeat for each required clip, in order.
 
 - Clip ID, name, and current revision:
-- Local editor save / rig path:
+- Editable source (.blend/editor save), rig path, action and export revision:
+- Transfer route/settings, axis/units and imported-pose validation:
+- Prop bindings, marker timings and any preview-proxy limitations:
 - Preview location or actual recording; what was inspected:
 - Intended owner type, name, and ID:
 - Operation: new asset / specific existing asset update / reuse only
-- User decision (actual response and conversation reference):
+- Review evidence, reviewer and decision for this revision:
+- Publication authorization (actual user response or standing instruction):
 - Approved revision and destination:
 - Published ID and asset link (pending until observed):
-- Observed creator and publication evidence:
+- Publication route (MCP/API or UI), observed creator and result evidence:
 - Target-experience loading and playback result:
 - Prior versions / IDs, when relevant:
 - Status: planned / editing / awaiting-review / approved / published / verified

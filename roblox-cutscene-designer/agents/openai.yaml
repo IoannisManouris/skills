@@ -1,6 +1,6 @@
 interface:
   display_name: "Roblox Cutscene Designer"
   short_description: "Build Roblox cutscenes with reviewed animations"
-  default_prompt: "Use $roblox-cutscene-designer to design and build my cutscene, reviewing each animation with me before publishing it to the game owner."
+  default_prompt: "Use $roblox-cutscene-designer to build my cutscene with suitable Blender MCP or Studio tools, review the animations under my chosen workflow, and verify playback in the game."
 policy:
   allow_implicit_invocation: true
